@@ -1,2 +1,9 @@
-media/
-var/
+# Magento Connect
+/downloader/
+
+# Magento media folder
+/media/
+
+# Magento runtime directories and files
+var/*
+!var/.htaccess
