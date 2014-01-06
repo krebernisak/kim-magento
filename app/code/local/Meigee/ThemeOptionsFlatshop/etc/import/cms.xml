@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<root>
+    <cms>
+        <pages>
+            <item>
+                <title>Home Page</title>
+                <identifier>home</identifier>
+                <content><![CDATA[<h1>New Products</h1>
+					{{widget type="meigeewidgetsflatshop/newproducts" template="meigee/meigeewidgetsflatshop/slider.phtml" products_amount="10" visible_products="3" autoSlide="1" autoSlideTimer="7000" autoSlideTransTimer="800" widget_id="7497"}}]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>one_column</root_template>
+            </item>
+        </pages>
+        <blocks>
+            <item>
+                <title>Flatshop Cart Banner</title>
+                <identifier>flatshop_cart_banner</identifier>
+                <content><![CDATA[<a href="#"><img src="{{media url="wysiwyg/cart_banner.jpg"}}" data-srcX2="{{media url="wysiwyg/cart_banner@x2.jpg"}}" alt="" /></a>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Custom Footer</title>
+                <identifier>flatshop_custom_footer</identifier>
+                <content><![CDATA[<div class="grid_3 alpha">
+					<h3>About us</h3>
+					<a href="#"><img src="{{media url="wysiwyg/footer_banner.png"}}" alt="" /></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo tristique metus ac tempus. Integer vitae felis sed tellus consequat ullamcorper non ut metus. Suspendisse laoreet metus ac massa.</p>
+				</div>
+				<div class="grid_3">
+					<h3>Help</h3>
+					<ul>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+						<li><a href="#">Consectetur adipiscing elit</a></li>
+						<li><a href="#">Pellentesque commodo tristique metus</a></li>
+						<li><a href="#">Ac tempus integer vitae</a></li>
+						<li><a href="#">Consectetur adipiscing elit</a></li>
+						<li><a href="#">Ac tempus integer</a></li>
+					</ul>
+				</div>
+				<div class="grid_3">
+					<h3>Accessories</h3>
+					<ul>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+						<li><a href="#">Consectetur adipiscing elit</a></li>
+						<li><a href="#">Pellentesque commodo tristique metus</a></li>
+						<li><a href="#">Ac tempus integer vitae</a></li>
+						<li><a href="#">Consectetur adipiscing elit</a></li>
+						<li><a href="#">Ac tempus integer</a></li>
+					</ul>
+				</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Footer Banner</title>
+                <identifier>flatshop_footer_banner</identifier>
+                <content><![CDATA[<a href="#"><img src="{{media url="wysiwyg/footer_banner.jpg"}}" alt="" /></a>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Header Blocks</title>
+                <identifier>flatshop_header_blocks</identifier>
+                <content><![CDATA[<div class="grid_8 alpha">
+	<div class="flipping-banner">
+		<div class="banner-button"><i class="fa fa-angle-left"></i></div>
+		<div class="rotator">
+			<div class="front-side">
+				<a href="#"><img src="{{media url="wysiwyg/home_banner.jpg"}}" data-srcX2="{{media url="wysiwyg/home_banner@x2.jpg"}}" alt="" /></a>
+			</div>
+			<div class="back-side">
+				<ol class="color-box"><li class="item first odd"></li><li class="item even"></li><li class="item odd"></li><li class="item even"></li><li class="item odd"></li><li class="item even"></li><li class="item odd"></li><li class="item even"></li><li class="item odd"></li><li class="item even"></li><li class="item odd"></li><li class="item even"></li><li class="item odd"></li><li class="item even"></li><li class="item last odd"></li></ol>
+				<div class="indent">
+					<h3>New t-shirts on sale pack of 5 colors. Try it in our shop right now! $22.99 only this month.</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo tristique metus ac tempus. Integer vitae felis sed tellus consequat ullamcorper non ut metus. Suspendisse laoreet metus ac massa tempor sollicitudin. Etiam hendrerit lorem vel ante vestibulum interdum at tristique orci. Nullam arcu justo, aliquam nec fermentum et, molestie ac eros. Maecenas porta, odio sit amet.</p>
+				</div>
+				<div class="actions">
+					<button onclick="setLocationAjax('#')" class="button" title="Category Button" type="button"><span><span>Go to category</span></span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="grid_4 omega">
+	<div class="flipping-banner">
+		<div class="banner-button"><i class="fa fa-angle-left"></i></div>
+		<div class="rotator">
+			<div class="front-side">
+				<a href="#"><img src="{{media url="wysiwyg/home_banner_2.jpg"}}" data-srcX2="{{media url="wysiwyg/home_banner_2@x2.jpg"}}" alt="" /></a>
+			</div>
+			<div class="back-side">
+				<ol class="color-box"><li class="item first odd"></li><li class="item even"></li><li class="item odd"></li><li class="item even"></li><li class="item odd"></li><li class="item even"></li><li class="item last odd"></li></ol>
+				<div class="indent">
+					<h3>Feel the power of your style. Amazing spring collection.</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis, lectus nec tempor sodales, sapien lacus posuere nisl, ut lobortis ipsum erat venenatis enim.</p>
+				</div>
+				<div class="actions">
+					<button onclick="setLocationAjax('#')" class="button" title="Category Button" type="button"><span><span>Go to category</span></span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Slider Slide 1</title>
+                <identifier>flatshop_slider_slide_1</identifier>
+                <content><![CDATA[<img src="{{media url="wysiwyg/slider_img.jpg"}}" data-srcX2="{{media url="wysiwyg/slider_img@x2.jpg"}}" alt="" />
+					<div class="slide-container container_12">
+						<h2>Presale</h2>
+						<h3>Hot sales of the season</h3>
+						<p>Romantic, trendy, classic or casual?<br /> We have dresses for every day and every style.<br /> From short-short to loonger styles-or somewhere in between.</p>
+						<h5><button type="button" title="Let's shop" class="button" onclick="setLocation('#')"><span><span>View All</span></span></button></h5>
+					</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Slider Slide 2</title>
+                <identifier>flatshop_slider_slide_2</identifier>
+                <content><![CDATA[<img src="{{media url="wysiwyg/slider_img_2.jpg"}}" data-srcX2="{{media url="wysiwyg/slider_img_2@x2.jpg"}}" alt="" />
+					<div class="slide-container container_12">
+						<h2>Big sale</h2>
+						<h3>Fashion trends for spring 2013</h3>
+						<p>Romantic, trendy, classic or casual?<br /> We have dresses for every day and every style.<br /> From short-short to loonger styles-or somewhere in between.</p>
+						<h5><button type="button" title="Let's shop" class="button" onclick="setLocation('#')"><span><span>View All</span></span></button></h5>
+					</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Slider Slide 3</title>
+                <identifier>flatshop_slider_slide_3</identifier>
+                <content><![CDATA[<img src="{{media url="wysiwyg/slider_img_3.jpg"}}" data-srcX2="{{media url="wysiwyg/slider_img_3@x2.jpg"}}" alt="" />
+					<div class="slide-container container_12">
+						<h2>One by Boutique</h2>
+						<h3>What's in store for summer time</h3>
+						<p>Romantic, trendy, classic or casual?<br /> We have dresses for every day and every style.<br /> From short-short to loonger styles-or somewhere in between.</p>
+						<h5><button type="button" title="Let's shop" class="button" onclick="setLocation('#')"><span><span>View All</span></span></button></h5>
+					</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Slider Boxed Slide 1</title>
+                <identifier>flatshop_slider_boxed_slide_1</identifier>
+                <content><![CDATA[<img src="{{media url="wysiwyg/slider_img.jpg"}}" data-srcX2="{{media url="wysiwyg/slider_img@x2.jpg"}}" alt="" />
+<div class="slide-container">
+	<h2>Presale</h2>
+	<h3>Hot sales of the season</h3>
+	<p>Romantic, trendy, classic or casual?<br /> We have dresses for every day and every style.<br /> From short-short to loonger styles-or somewhere in between.</p>
+	<h5><button type="button" title="Let's shop" class="button" onclick="setLocation('#')"><span><span>View All</span></span></button></h5>
+</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Slider Boxed Slide 2</title>
+                <identifier>flatshop_slider_boxed_slide_2</identifier>
+                <content><![CDATA[<img src="{{media url="wysiwyg/slider_img_2.jpg"}}" data-srcX2="{{media url="wysiwyg/slider_img_2@x2.jpg"}}" alt="" />
+<div class="slide-container">
+	<h2>Big sale</h2>
+	<h3>Fashion trends for spring 2013</h3>
+	<p>Romantic, trendy, classic or casual?<br /> We have dresses for every day and every style.<br /> From short-short to loonger styles-or somewhere in between.</p>
+	<h5><button type="button" title="Let's shop" class="button" onclick="setLocation('#')"><span><span>View All</span></span></button></h5>
+</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Slider Boxed Slide 3</title>
+                <identifier>flatshop_slider_boxed_slide_3</identifier>
+                <content><![CDATA[<img src="{{media url="wysiwyg/slider_img_3.jpg"}}" data-srcX2="{{media url="wysiwyg/slider_img_3@x2.jpg"}}" alt="" />
+<div class="slide-container">
+	<h2>One by Boutique</h2>
+	<h3>What's in store for summer time</h3>
+	<p>Romantic, trendy, classic or casual?<br /> We have dresses for every day and every style.<br /> From short-short to loonger styles-or somewhere in between.</p>
+	<h5><button type="button" title="Let's shop" class="button" onclick="setLocation('#')"><span><span>View All</span></span></button></h5>
+</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Social Links</title>
+                <identifier>flatshop_social_links</identifier>
+                <content><![CDATA[{{widget type="meigeewidgetsflatshop/sociallinks" twitter="http://twitter.com" rss="http://rss.com" facebook="http://facebook.com" googleplus="https://plus.google.com" linkedin="http://linkedin.com" vimeo="https://vimeo.com/" youtube="http://youtube.com/" template="meigee/meigeewidgetsflatshop/sociallinks.phtml" flickr="http://flickr.com/"}}]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+			<item>
+                <title>Flatshop Product Banner</title>
+                <identifier>flatshop_product_banner</identifier>
+                <content><![CDATA[<a href="#"><img src="{{media url="wysiwyg/product_banner.jpg"}}" data-srcX2="{{media url="wysiwyg/product_banner@x2.jpg"}}" alt="" /></a>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+        </blocks>
+    </cms>
+</root>

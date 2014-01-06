@@ -1,0 +1,396 @@
+/**
+ * These styles is generated automaticaly. Please Do no edit it directly all changes will be lost.
+ *//*======Site Bg=======*/
+.header-slider-holder,
+.content-wrapper{background-color:#F2F2F2;}
+
+
+/*======Skin Color #1=======*/
+.onepagecheckout-index-index .onepagecheckout_loginarea .onepagecheckout_loginlink{color:#F44051;}
+
+.checkout-cart-index .iwd-ec-col-main .cart-empty #iwd-emptycart-writeup #buttonwrapper .iwdbutton a,
+#onepagecheckout_forgotbox button.button > span,
+#onepagecheckout_loginbox button.button > span,
+#checkout-review-submit #review-buttons-container button.btn-checkout,
+#login-holder .close-button,
+aside.sidebar section.block-layered-nav #slider-range .ui-slider-handle,
+ button.button.btn-quick-view:hover > span,
+.block-related .prev:hover,
+.block-related .next:hover,
+.product-view .product-prev:hover,
+.product-view .product-next:hover,
+aside.sidebar section header .mobile-sidebar-button.active,
+header#header .menu-button:hover,
+.header-slider-container .iosSlider .slider .item h3,
+.flipping-banner .banner-button:hover,
+span.label-sale,
+.block-wishlist .prev:hover,
+.block-wishlist .next:hover,
+.opc .active .step-title,
+.block-account li:hover i,
+.block-account li.current i,
+.my-wishlist .buttons-set button.btn-add:hover > span,
+.my-wishlist .buttons-set button.btn-share:hover > span,
+.cart .totals.totals-accordion .checkout-types button.button:hover > span,
+#cart-accordion .accordion-content .discount .buttons-set button:hover > span,
+#cart-accordion .accordion-content .shipping .buttons-set button:hover > span,
+.cart-table tfoot td .btn-update:hover > span,
+.cart-table tfoot td .btn-clear:hover > span,
+.catalog-product-view #review-form .buttons-set button > span,
+.bottom-product-related .block-related .prev:hover,
+.bottom-product-related .block-related .next:hover,
+.bottom-product-related .block-related .block-content .block-subtitle a,
+.my-wishlist div.quantity-decrease:hover,
+.my-wishlist div.quantity-increase:hover,
+.add-to-cart div.quantity-decrease:hover,
+.add-to-cart div.quantity-increase:hover,
+.cart-table div.quantity-decrease:hover,
+.cart-table div.quantity-increase:hover,
+.product-view .product-shop .add-to-links-box .add-to-links li:hover i,
+.product-view .product-shop .add-to-links-box .email-friend:hover i,
+.more-views .prev:hover,
+.more-views .next:hover,
+.toolbar-bottom .pager .pages ol li.current,
+.toolbar-bottom .pager .pages ol li:hover a,
+.products-list .email-friend a:hover i,
+.products-list .add-to-links li a:hover i,
+.sorter .view-mode strong.grid i,
+.sorter .view-mode strong.list i,
+.sorter .view-mode a.grid:hover i,
+.sorter .view-mode a.list:hover i,
+.block-layered-nav dl#layered_navigation_accordion dt.closed .btn-nav,
+#categories-accordion li .btn-cat.closed,
+.flipping-banner .color-box .item.odd,
+.products-grid .color-box .elem.odd,
+section .color-box .item.odd,
+header#header .top-cart .block-content .color-box .item.odd,
+#nav .color-box .item.odd,
+#custommenu .color-box .item.odd,
+header#header .top-cart .block-title,
+header#header .form-search button:hover > span,
+button.button > span{background-color:#F44051;}
+
+
+.cart .totals .checkout-types{
+	background-color:rgba(244,64,81, 0.9);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6F44051,endColorstr=#E6F44051);
+	zoom: 1;
+}
+
+button.btn-quick-view:hover i.triangle-topleft,
+span.label-sale .triangle-topleft{border-top-color: #F44051!important;}
+button.btn-quick-view:hover i.triangle-bottomleft,
+span.label-sale .triangle-bottomleft{border-bottom-color: #F44051!important;}
+
+
+/*======Skin Color #2=======*/
+.menu-mobile .parentMenu a i.num,
+header#header .nav-container #custommenu div.menu a span i.num,
+.block-account h2 i,
+.block-related .product-details .price-box .price,
+aside.sidebar section.block-wishlist li.item .product-details .price-box .price,
+#footer .footer-columns-wrapper li a:before,
+header#header .top-cart .product-box,
+#nav li a span.num{color:#2FB9B7;}
+
+.menu-mobile.open > .parentMenu,
+header#header .nav-container #custommenu div.menu.act a,
+header#header .nav-container #custommenu div.menu.act.active a,
+.checkout-cart-index .iwd-ec-col-main .cart-empty #iwd-emptycart-writeup #buttonwrapper .iwdbutton a:hover,
+#onepagecheckout_forgotbox button.button:hover > span,
+#onepagecheckout_loginbox button.button:hover > span,
+#checkout-review-submit #review-buttons-container button.btn-checkout:hover,
+#login-holder form .actions,
+#login-holder .page-title,
+aside.sidebar section.block-layered-nav #slider-range .ui-slider-range,
+button.btn-quick-view > span,
+aside.sidebar section header .mobile-sidebar-button,
+header#header .menu-button,
+#menu-button,
+.header-slider-container .iosSlider .slider .item h2,
+.flipping-banner .banner-button,
+span.label-new,
+.opc .step-title .number,
+.my-wishlist .buttons-set button.btn-add > span,
+.my-wishlist .buttons-set button.btn-share > span,
+.my-wishlist .data-table thead,
+.account-login .registered-users .buttons-set,
+.account-login .new-users .buttons-set,
+.cart .totals.totals-accordion .checkout-types button.button > span,
+#cart-accordion .accordion-content .discount .buttons-set button > span,
+#cart-accordion .accordion-content .shipping .buttons-set button > span,
+.cart-table tfoot td .btn-update > span,
+.cart-table tfoot td .btn-clear > span,
+.cart .cart-table thead,
+.bottom-product-related .block-related .block-content .block-subtitle a:hover,
+.catalog-product-view #review-form .buttons-set button:hover > span,
+.catalog-product-view .box-reviews .data-table thead,
+.product-view .product-shop .add-to-links-box .add-to-links i,
+.product-view .product-shop .add-to-links-box .email-friend i,
+.products-list .email-friend a i,
+.products-list .add-to-links li a i,
+.sorter .view-mode a.grid i,
+.sorter .view-mode a.list i,
+.sorter .sort-by a,
+aside.sidebar .actions,
+#footer .footer-columns-wrapper li a:hover,
+ul.social-links li a:hover,
+header#header .links li a:hover,
+.flipping-banner .color-box .item.even,
+.products-grid .color-box .elem.even,
+section .color-box .item.even,
+header#header .top-cart .block-content .color-box .item.even,
+#nav .color-box .item.even,
+#custommenu .color-box .item.even,
+header#header .form-search button > span,
+#nav > li.active > a,
+button.button:hover > span{background-color:#2FB9B7;}
+
+
+.onepagecheckout-index-index #onepagecheckout_forgotbox.op_login_area,
+.onepagecheckout-index-index #onepagecheckout_loginbox.op_login_area,
+#onepagecheckout_orderform .col3-set.onepagecheckout_datafields .col-1,
+#onepagecheckout_orderform .col3-set.onepagecheckout_datafields .col-2,
+#onepagecheckout_orderform .col3-set.onepagecheckout_datafields .col-3,
+button.btn-quick-view i.triangle-topleft,
+span.label-new .triangle-topleft{border-top-color: #2FB9B7!important;}
+button.btn-quick-view i.triangle-bottomleft,
+span.label-new .triangle-bottomleft{border-bottom-color: #2FB9B7!important;}
+
+/*======Header=======*/
+/* Header Wrapper */
+header#header{background-color:#FFFFFF;}
+
+/* Navigation text color */
+#nav li a{color:#333333;}
+
+/* Navigation active text color */
+#nav li.active a,
+#nav li.active a span.num { color:#FFFFFF; }
+
+/* Navigation hover bg */
+#nav > li > a:hover {background-color: #EEEEEE;}
+
+/* Navigation active bg */
+#nav > li.active > a,
+button.button:hover > span{background-color:#2FB9B7;}
+
+/* Navigation button border radius */
+#nav li a:hover,
+#nav li.over a,
+#nav li.active a{
+	-webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+/* Navigation divider color */
+#nav li.level-top > a > span{
+	border-right-color: #E7E7E7;
+}
+
+/* Search form bg */
+header#header .form-search,
+header#header .form-search .search-autocomplete ul{background-color:#ECECEC;}
+
+/* Search form input text color */
+header#header .form-search input{color:#999999;}
+
+/* Search form button text color */
+header#header .form-search button span span{color:#FFFFFF;}
+
+/* Search form button bg color */
+header#header .form-search button > span{background-color:#2FB9B7;}
+
+/* Top cart button bg */
+header#header .top-cart .block-title{background-color: #F44051;}
+
+/* Top cart button text color */
+header#header .top-cart .block-title .title-cart{
+	color:#FFFFFF;
+}
+
+/* Top cart button hover bg */
+header#header .top-cart .block-title.active,
+header#header .top-cart .block-title:hover{background-color: #333333;}
+
+/* Top cart button hover text color */
+header#header .top-cart .block-title:hover .title-cart{
+	color:#FFFFFF;
+}
+
+/* Header toolbar wrapper */
+header#header .header-toolbar-wrapper{
+	background-color:#DDDDDD;
+}
+
+/* Header toolbar links text color */
+header#header .links li a{
+	color:#777777;
+}
+
+/* Header toolbar links text hover color */
+header#header .links li a:hover{
+	color:#FFFFFF;
+}
+
+/* Header toolbar links bg hover color */
+header#header .links li a:hover{
+	background-color:#2FB9B7;
+}
+
+/* Language + Currency label color */
+header#header .form-language label,
+header#header .form-currency label{color:#999999;}
+
+/* Language + Currency link color */
+.sbSelector{color:#777777;}
+
+/* Language + Currency link color hover */
+.sbSelector:hover{color:#333333;}
+
+
+/*======Footer=======*/
+
+/* Main bg */
+body {background-color:#272727;}
+
+/* Footer columns wrapper */
+#footer .footer-columns-wrapper{
+	background-color: #333333;
+}
+
+/* Footer top links color */
+#footer ul li a{color:#FFFFFF;}
+
+/* Footer top links hover color */
+#footer ul li a:hover{color:#AAAAAA;}
+
+/* Footer text color */
+#footer .footer-columns-wrapper{
+	color:#AAAAAA;
+}
+
+/* Footer Title color */
+#footer .footer-columns-wrapper h3{
+	color:#FFFFFF;
+}
+
+/* Footer list: link color */
+#footer .footer-columns-wrapper li a{
+	color:#AAAAAA;
+}
+
+/* Footer list: marker color */
+#footer .footer-columns-wrapper li a:before{
+	background: #2FB9B7;
+}
+
+/* Footer list: link and marker color hover */
+#footer .footer-columns-wrapper li a:hover:before{
+	background:#FFFFFF;
+}
+#footer .footer-columns-wrapper li a:hover{
+
+	color:#FFFFFF;
+}
+
+/* Footer copyright color */
+#footer address{color:#FFFFFF;}
+
+/* Footer contact form: text color */
+#footer .contacts-footer-content input.input-text,
+#footer .contacts-footer-content .input-box textarea{
+	color:#999999;
+}
+
+/* Footer contact form: bg color */
+#footer .contacts-footer-content input.input-text,
+#footer .contacts-footer-content .input-box textarea{
+	background-color:rgba(0,0,0, 0.3);
+}
+
+/* Footer contact form: border radius */
+#footer .contacts-footer-content input.input-text,
+#footer .contacts-footer-content .input-box textarea{
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+
+/* Footer contact form: button color */
+#footer .contacts-footer-content .buttons-set button > span{
+	background-color: #F44051;
+}
+
+/* Footer contact form: button color hover */
+#footer .contacts-footer-content .buttons-set button:hover > span{
+	background-color: #2FB9B7;
+}
+
+/* Social Icons: item bg */
+ul.social-links li a {
+	background-color:#171717;
+}
+
+/* Social Icons: item bg hover */
+ul.social-links li a:hover {
+	background-color:#2FB9B7;
+}
+
+/* Social Icons: item color */
+ul.social-links li a i{
+	color:#444444;
+}
+
+/* Social Icons: item color hover */
+ul.social-links li a:hover i{
+	color:#FFFFFF;
+}
+
+/* Listing title color */
+.products-grid .product-name a,
+.products-list .product-name a{color:#333333;}
+
+/* Listing title color hover */
+.products-grid .product-name a:hover,
+.products-list .product-name a:hover{color:#999999;}
+
+/* Product List Description color */
+.products-list .desc{color:#777777;}
+
+/* ===Product Labels=== */
+/* Label New color */
+span.label-new{color:#FFFFFF;}
+
+/* Label New bg color */
+span.label-new{
+	background-color: #2FB9B7;
+}
+span.label-new .triangle-topleft{
+	border-top-color: #2FB9B7!important;
+}
+span.label-new .triangle-bottomleft {
+    border-bottom-color: #2FB9B7!important;
+}
+
+/* Label Sale color */
+span.label-sale{color:#FFFFFF;}
+
+/* Label Sale bg color */
+span.label-sale{
+	background-color: #F44051;
+}
+span.label-sale .triangle-topleft{
+	border-top-color: #F44051!important;
+}
+span.label-sale .triangle-bottomleft {
+    border-bottom-color: #F44051!important;
+}
+/* Regular Price color */
+.regular-price .price{color:#333333;}
+
+/* Old Price color */
+.product-view .product-shop .price-box .old-price .price,
+.products-list .product-shop .old-price .price,
+.old-price .price{color:#999999;}
+

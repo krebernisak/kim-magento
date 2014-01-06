@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Meigee_MeigeewidgetsFlatshop>
+            <version>0.0.1</version>
+        </Meigee_MeigeewidgetsFlatshop>
+    </modules>
+    <global>
+        <helpers>
+            <meigeewidgetsflatshop>
+                <class>Meigee_MeigeewidgetsFlatshop_Helper</class>
+            </meigeewidgetsflatshop>
+        </helpers>
+        <blocks>
+             <meigeewidgetsflatshop>
+                <class>Meigee_MeigeewidgetsFlatshop_Block</class>
+             </meigeewidgetsflatshop>
+        </blocks>
+        <models>
+            <!-- ... -->
+            <meigeewidgetsflatshop>
+                <class>Meigee_MeigeewidgetsFlatshop_Model</class>
+            </meigeewidgetsflatshop>   
+            <!-- ... -->
+        </models>
+    </global>
+    <!---->
+    <frontend>
+        <layout>
+            <updates>
+                <meigeewidgetsflatshop>
+                    <file>meigee/widgetoptions.xml</file>
+                </meigeewidgetsflatshop>
+            </updates>
+        </layout>
+    </frontend>
+</config>

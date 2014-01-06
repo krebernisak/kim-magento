@@ -1,0 +1,552 @@
+.menu-button{display: none!important;}
+header#header .nav-container #custommenu {
+    font-size: 1em; 
+	margin-top: 1em;
+	margin-left: 50px;
+	position: relative;
+}
+header#header .nav-container #custommenu.full{position: static;}
+/*IE7 fix*/
+*:first-child+html #custommenu {
+    z-index: 998;
+}
+header#header .nav-container div.menu {
+    float: left;
+    font-size: 1em;
+	font-family: Arial, sans-serif;
+	text-transform: none;
+}
+header#header .nav-container #custommenu div.menu.last > .parentMenu > a > span{border: none!important;}
+header#header .nav-container #custommenu div.menu a:link, 
+header#header .nav-container #custommenu div.menu a:visited {
+	display: block;
+	color: #000;
+	padding:6px 0 0.42em;
+	height: auto;
+	margin:0;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	-moz-transition:background-color 500ms ease;
+	-webkit-transition:background-color 500ms ease;
+	-o-transition:background-color 500ms ease;
+	transition:background-color 500ms ease;
+}
+header#header .nav-container #custommenu div.menu a:hover{
+	background-color:#eee;
+}
+header#header .nav-container #custommenu div.menu a span {
+    display: block;
+    color:#333;
+	padding:0 14px;
+	height: auto;
+	border-right: 1px solid #e7e7e7!important;
+	font-size: 1.25em;
+	line-height: normal;
+	border-right: none;
+	font-weight: bold;
+}
+
+header#header .nav-container #custommenu div.menu.act > .parentMenu > a > span{
+	border-right: none!important;
+}
+
+header#header .nav-container #custommenu div.menu a span i.num{
+	font-family: Arial, sans-serif;
+	display: block;
+	font-size: 0.53em;
+}
+header#header .nav-container #custommenu div.menu:hover a,
+header#header .nav-container #custommenu div.menu.active a{
+	background-color: #eee;
+	-moz-transition:background-color 500ms ease;
+	-webkit-transition:background-color 500ms ease;
+	-o-transition:background-color 500ms ease;
+	transition:background-color 500ms ease;
+}
+header#header .nav-container #custommenu div.menu.act span{
+	color:#fff;
+}
+header#header .nav-container #custommenu div.menu.act span i.num{
+	color:#fff;
+}
+div.menu a span:hover {
+    cursor: pointer;
+}
+header#header .nav-container #custommenu div.wp-custom-menu-popup {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    text-align: left;
+    border-top: 0;
+    margin-top: 0;
+	padding:28px 0 0;
+}
+header#header .nav-container #custommenu div.wp-custom-menu-popup.adaptive{
+	width: 100%;
+}
+header#header .nav-container #custommenu.full div.wp-custom-menu-popup{
+	top: 77px !important;
+	padding-top: 40px;
+}
+
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1{
+	padding: 1.5em 0 0.2em;
+	box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+}
+div.menu a, div.wp-custom-menu-popup a {
+    text-decoration: none;
+    display:block;
+    cursor: pointer;
+    _height: 0;
+    height: auto;
+    line-height:13px;
+}
+div.level1 {
+    margin-bottom: 5px;
+}
+div.level2 {
+    margin-bottom: 5px;
+}
+div.level3 {
+    margin-bottom: 5px;
+    padding: 0 0 0 9px;
+}
+div.block2 {
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+	padding-bottom: 10px;
+    display: block;
+}
+a.level1:link, a.level1:visited {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+a.level2:link, a.level2:visited {
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+/* Clearfix */
+div.block2:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+html[xmlns] div.block2 {
+    display: block;
+}
+* html div.block2 {
+    height: 1%;
+}
+div.block2 p {
+    margin-bottom: 3px;
+    line-height: 120%;
+    color: #000;
+    font-size: 11px;
+}
+div.block2 p a {
+    display: inline;
+}
+div.block2 a img {
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+div.block2 a:hover img {
+    opacity: 1;
+    filter: alpha(opacity=100);
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-ms-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}
+div.block2 .brand a:hover img {
+    -webkit-transition: all 0;
+    -moz-transition: all 0;
+    -ms-transition: all 0;
+    transition: all 0;
+}
+div.wp-custom-menu-popup hr {
+    margin: 0px 0px 10px 0px;
+}
+/******************************************* COLUMN WIDTH ***************************** */
+header#header .nav-container #custommenu div.column {
+    float: left;
+    width: 17%; /* for 5 columns*/
+    margin: 0;
+	padding:0 33px 0 20px;
+	padding:0 1% 0 2%;
+}
+/*end COLUMN WIDTH  */
+
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu > .itemMenuName{
+	padding:0;
+	margin: 0 0 1.5em;
+}
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu > .itemMenuName:hover{
+	background: none;
+}
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu > .itemMenuName > span{
+	font-size: 1.25em;
+	color: #333;
+	font-weight:normal;
+	-moz-transition:color 300ms ease;
+	-webkit-transition:color 300ms ease;
+	-o-transition:color 300ms ease; 
+	transition:color 300ms ease;
+}
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu > .itemMenuName:hover span{
+	color:#777;
+}
+
+div.itemSubMenu {
+    margin-left: 0px;
+}
+
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName{
+	padding:0 0 0 10px;
+	margin-bottom:0.75em;
+	position: relative;
+}
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName:before{
+	content:'';
+	position: absolute;
+	left: 0;
+	top: 0.46em;
+	width: 3px;
+	height: 3px;
+	background:#777;
+}
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName > span{
+	font-family: Arial, sans-serif;
+	font-size: 0.847em;
+	line-height: 1.44em;
+	color:#777;
+}
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName.level3 > span{font-size: 1em;}
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName.level4 > span,
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName.level5 > span,
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName.level6 > span,
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName.level7 > span{font-size: 0.91em;}
+header#header .nav-container #custommenu div.wp-custom-menu-popup .block1 .column .itemMenu div.itemSubMenu .itemMenuName:hover span{
+	color:#333;
+}
+
+.clearBoth {
+    clear:both;
+    height: 0;
+    overflow: hidden;
+}
+div.level1 {
+    margin-bottom: 0px;
+}
+/*BG*/
+div.wp-custom-menu-popup {
+    /* background: #f1f1f1;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.3); */
+}
+div.menu a:link, div.menu a:visited {
+}
+div.menu a:hover {
+    /* background: #f1f1f1; */
+}
+div.menu a, div.wp-custom-menu-popup a {
+ -webkit-transition: all .1s linear;
+-moz-transition: all .1s linear;
+-ms-transition: all .1s linear;
+transition: all .1s linear;
+}
+div.menu .brand a, div.wp-custom-menu-popup .brand a {
+    -webkit-transition: all 0s linear;
+    -moz-transition: all 0s linear;
+    -ms-transition: all 0s linear;
+    transition: all 0s linear;
+}
+div.menu.active a {
+    /* background: #f1f1f1 !important;
+    color: #000 !important; */
+}
+div.level3 {
+    background: #fff;
+}
+/*FONTS*/
+div.menu {
+    font-weight: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Segoe UI";
+}
+a.level1:link, a.level1:visited {
+    text-transform: none;
+    font-weight: normal;
+}
+a.level2:link, a.level2:visited {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+}
+a.level3:link, a.level3:visited {
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 100%;
+    margin-bottom: 0px;
+}
+/*COLOR*/
+div.menu a:link, div.menu a:visited {
+    color: #fff;
+}
+div.menu a:hover, div.menu.active a {
+    color: #000;
+}
+a.level3:link, a.level3:visited {
+    color: #333333;
+}
+a.level3:hover {
+    color: #b43f74;
+}
+a.level2:link, a.level2:visited {
+    color: #000;
+}
+a.level1:hover {
+    background: #d3d3d3;
+}
+a.level2:hover {
+    color: #000;
+    background: #d3d3d3;
+}
+.block2 table.brand {
+    float: left;
+}
+.block2 .single_menu_product {
+    float: left;
+    position: relative;
+    max-width: 150px;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-left: 0px;
+}
+/*MOBILE MENU STYLES*/
+#menu-button, .parentMenu {
+    display: inline-block;
+}
+html[xmlns] #menu-button, html[xmlns] .parentMenu {
+    display: block;
+}
+* html #menu-button, * html .parentMenu {
+    height: 1%;
+}
+#menu-button:after, .parentMenu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+#custommenu-mobile {
+    position:relative;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 999;
+}
+#menu-button {
+    border-radius: 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    float: none;
+    font-size: 1.35em;
+    line-height: 1.5em;
+	height: 22px;
+    margin: 0 10px 0 0;
+    padding: 9px 28px 9px 15px;
+    position: relative;
+    -moz-transition:background-color 300ms ease;
+	-webkit-transition:background-color 300ms ease;
+	-o-transition:background-color 300ms ease; 
+	transition:background-color 300ms ease;
+}
+#menu-button i{
+	color:#fff;
+	margin-right: 10px;
+	position: relative;
+	top: 3px;
+}
+#menu-button:hover {
+    cursor: pointer;
+}
+#menu-content{
+	position: absolute;
+	left: 0;
+	top: 55px;
+	background-color:#FFF;
+	width: 236px;
+	margin: 0;
+    padding: 18px;
+    z-index: 999;
+	border: 1px solid #CBCBCB;
+	border-top: 2px solid #777;
+}
+.menu-mobile div.column {
+    float:none;
+    padding:5px;
+    background: #fff;
+}
+.menu-mobile a.itemMenuName {
+    display: block;
+    text-align: left;
+}
+.menu-mobile div.menu-button, .menu-mobile div.menu-mobile {
+    float: none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+.menu-mobile div.column {
+    float: none;
+    width: 100%;
+    padding: 0px 0;
+    margin: 0px 0px 0px 0px;
+}
+.menu-mobile a.level1:link, .menu-mobile a.level1:visited {
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding: 10px 10px;
+    border-radius: 2px;
+    color: #000;
+}
+.menu-mobile a.level2:link, .menu-mobile a.level2:visited {
+    padding: 10px 10px;
+    border-radius: 2px;
+}
+.menu-mobile a.level1:link, .menu-mobile a.level1:visited {
+    color: #555;
+}
+.menu-mobile a.level1:hover {
+    /* background-color: #f1f1f1; */
+}
+.menu-mobile .parent {
+    background-color: #fff;
+}
+/*buttons level 01*/
+.menu-mobile .parentMenu {
+    padding: 0;
+    display: block;
+    text-align: left;
+	-moz-transition:background-color 300ms ease;
+	-webkit-transition:background-color 300ms ease;
+	-o-transition:background-color 300ms ease;
+	transition:background-color 300ms ease;
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+.menu-mobile .parentMenu a:link, .menu-mobile .parentMenu a:visited {
+    padding: 8px 45px 5px 15px;
+    color: #333;
+    display: block;
+	font-size: 1.25em;
+}
+.menu-mobile .parentMenu:hover {
+    cursor: pointer;
+	background-color:#eee;
+}
+.menu-mobile .parentMenu a i.num{
+	display: block;
+	font-family: arial;
+    font-size: 0.533em;
+    line-height: 1.01em;
+}
+.menu-mobile.open > .parentMenu a span{
+	color:#fff;
+}
+.menu-mobile.open > .parentMenu a i.num{color:#fff;}
+#custommenu-mobile .menu-mobile.open > .parentMenu span.button i{color:#fff;}
+
+#custommenu-mobile .wp-custom-menu-submenu{
+	position: relative;
+	padding: 9px 18px !important;
+}
+#custommenu-mobile .wp-custom-menu-submenu .itemMenu .parentMenu{
+	border-bottom: 1px solid #e5e5e5;
+}
+#custommenu-mobile .wp-custom-menu-submenu .itemMenu .parentMenu:hover,
+#custommenu-mobile .wp-custom-menu-submenu .itemMenu.open > .parentMenu{
+	background-color:#FAFAFA;
+}
+#custommenu-mobile .wp-custom-menu-submenu .itemMenu .parentMenu .itemMenuName{
+	padding-bottom: 8px;
+	padding-left: 22px;
+	background: none;
+	color:#777;
+}
+#custommenu-mobile .wp-custom-menu-submenu .itemMenu .parentMenu .itemMenuName:before{
+	content:'';
+	position: absolute;
+	top: 15px;
+	left: 12px;
+	width: 3px;
+	height: 3px;
+	background-color:#777;
+}
+#custommenu-mobile .wp-custom-menu-submenu .itemMenu .parentMenu span.button{top: -2px;}
+
+.parentMenu {
+    position: relative;
+}
+.parentMenu a {
+    display: block;
+}
+#menu-button {
+    cursor: pointer;
+}
+.menu-mobile div.level2 {
+    margin-bottom: 0;
+}
+#custommenu-mobile .button {
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top: 0px;
+    display: block;
+    background: none;
+	width: 38px;
+    height: 38px;
+	text-align: center;
+    z-index: 999;
+}
+#custommenu-mobile .button i{
+	font-size: 1.5em;
+	line-height: 2.2em;
+	color:#aaa;
+}
+#custommenu-mobile .button .fa.fa-minus{
+	display: none;
+}
+#custommenu-mobile .button.open .fa.fa-minus{display: block;}
+#custommenu-mobile .button.open .fa.fa-plus{display: none;}
+
+#custommenu-mobile .button.open {}
+#custommenu-mobile .level1 .button {}
+#custommenu-mobile .level1 .button.open {}
+/*BG*/
+#custommenu-mobile  .parentMenu:hover a:link, #custommenu-mobile  .parentMenu:hover a:visited, #custommenu-mobile  .parentMenu:hover {
+    /* background-color: #fff; */
+}
+#custommenu-mobile .itemMenu{position: relative;}
+#custommenu-mobile .level0 {
+	border: none;
+	padding:0;
+	position: relative;
+}
+#custommenu-mobile .level1 {
+    /* background-color: #e4e4e4; */
+}
+#custommenu-mobile .level2 {
+    /* background-color: #f1f1f1; */
+}

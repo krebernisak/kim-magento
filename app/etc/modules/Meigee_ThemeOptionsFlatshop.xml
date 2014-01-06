@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+   <modules>
+	  <Meigee_ThemeOptionsFlatshop>
+		 <active>true</active>
+		 <codePool>local</codePool>
+	  </Meigee_ThemeOptionsFlatshop>
+   </modules>
+</config>

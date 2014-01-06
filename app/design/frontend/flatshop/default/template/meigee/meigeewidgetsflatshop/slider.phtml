@@ -1,0 +1,266 @@
+<?php
+    $_productCollection = $this->getMyCollection();
+	$gridMode = $this->sliderGridSelection();
+	$visibleProducts = $this->getData('visible_products');
+	$productCount = count($_productCollection);
+	if (count($_productCollection)) {
+	
+		$category = $this->catName();
+		$_helper = $this->helper('catalog/output');
+		$_collectionSize = $this->productsAmount();
+
+		$randId = $this->getWidgetId();
+		
+		$fancybox = MAGE::helper('ThemeOptionsFlatshop')->getThemeOptionsFlatshop('fancybox' );
+		$helpImg = $this->helper('ThemeOptionsFlatshop/images');
+?>
+<?php // Slider ?>
+<div class="slider-container widget-container">
+	<?php if($productCount > $visibleProducts): ?>
+		<div class="home-container <?php echo $gridMode; ?> alpha omega">
+			<div class="home-slider-conainer">
+				<div class="home-slider es-carousel-wrapper" id="home-slider-<?php echo $randId; ?>">
+					<div class="widget-slider">
+						<ul class="products-grid carousel-ul">
+							<?php $i=0; foreach ($_productCollection as $_product): ?>
+							<?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+							<?php
+								$keywords = array('old-price', 'special-price', 'minimal-price-link', 'price-from', 'price-to');
+								$pricestring = $this->getPriceHtml($_product, true);
+								$isKeyAvaliable = false;
+								foreach($keywords as $word){
+									if(strpos($pricestring, $word)){
+										$isKeyAvaliable = true;
+									}
+								}
+							?>
+							<li class="item <?php if($isKeyAvaliable == true){echo 'big-price';} ?>">
+								<div class="indent">
+									<ol class="color-box"><li class="elem first odd"></li><li class="elem even"></li><li class="elem odd"></li><li class="elem even"></li><li class="elem odd last"></li></ol>
+									<?php 
+										$isKeyAvaliable = false;
+										if(MAGE::helper('ThemeOptionsFlatshop')->getProductLabels($_product)){
+											$keywords = array('label-new');
+											$labelstring = MAGE::helper('ThemeOptionsFlatshop')->getProductLabels($_product);
+											foreach($keywords as $word){
+												if(strpos($labelstring, $word)){
+													$isKeyAvaliable = true;
+												}
+											}
+										}
+									?>
+									<div class="product-container<?php if(MAGE::helper('ThemeOptionsFlatshop')->getProductLabels($_product)){echo ' labels';} ?>">
+										<h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+										<div class="product-img-box">
+											<?php echo MAGE::helper('ThemeOptionsFlatshop')->getProductLabels($_product); ?>
+											<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><div class="hover-box"><img src="<?php echo $helpImg->getImg($_product, 'small_image', 400, null); ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('grid', $_product); ?> alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /><?php /* Hover Image */ echo MAGE::helper('ThemeOptionsFlatshop')->getHoverImage($_product, 400, 800); ?></div></a>
+											<?php  // Fancybox
+											if ($fancybox['fancybox_status'] && $fancybox['fancybox_home'] == 1): ?>
+													<a class="fancybox category-gallery" title="<?php echo $_productNameStripped; ?>" href="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>"><i class="fa fa-search"></i></a>
+												<?php endif;
+											// End Fancybox ?>
+											<?php if(Mage::getStoreConfig('ajax/general/enabledpro')){ ?>
+											<button type="button" title="<?php echo $this->__('Quick View') ?>" class="button btn-quick-view" onclick="showOptions('<?php echo $_product->getId()?>')"><span><i class="triangle-topleft"></i><i class="triangle-bottomleft"></i><span><?php echo $this->__('Quick View') ?></span></span></button>
+											<a href='<?php echo $this->getUrl('ajax/index/options',array('product_id'=>$_product->getId()));?>' class='ajax-fancybox' id='fancybox<?php echo $_product->getId()?>' style='display:none'>Test</a>
+											<?php } ?>
+										</div>
+										<div class="actions">
+											<?php echo $this->getPriceHtml($_product, true) ?>
+											<?php if($_product->isSaleable()): ?>
+												<?php if(Mage::getStoreConfig('ajax/general/enabledpro')){ ?>
+													<?php if ( !($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped()) ): ?>
+														<div class="button-holder">
+															<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>','<?php echo $_product->getId()?>')"><span><i class="fa fa-shopping-cart"></i><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+															<span id='ajax_loader<?php echo $_product->getId()?>' class="ajax-loader-item cart-item" style='display:none'><img src='<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif')?>'/></span>
+														</div>
+													<?php else: ?>
+														<div class="button-holder">
+															<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button" onclick="showOptions('<?php echo $_product->getId()?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+															<a href='<?php echo $this->getUrl('ajax/index/options',array('product_id'=>$_product->getId()));?>' class='ajax-fancybox' id='fancybox<?php echo $_product->getId()?>' style='display:none'>Test</a>
+														</div>
+													<?php endif; ?>
+												<?php }
+												else{ ?>
+												 <div class="button-holder"><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><i class="fa fa-shopping-cart"></i><span><?php echo $this->__('Add to Cart') ?></span></span></button></div>
+												<?php } ?>
+											<?php else: ?>
+												<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+											<?php endif; ?>
+											<div class="clear"></div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<?php if (++$i > $_collectionSize-1 ) break; endforeach ?>
+						</ul>
+					</div>
+					<div class = 'next'><i class="fa fa-angle-right"></i></div>
+					<div class = 'prev unselectable'><i class="fa fa-angle-left"></i></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+		<script type="text/javascript">
+		jQuery(window).load(function(){
+		
+		
+			slider_items_length = jQuery('#home-slider-<?php echo $randId; ?> .item').size();
+			if(slider_items_length > 1){
+				var slider_bullets = '<ul class="slideSelectors">';
+				for(i=1; i<=slider_items_length-2; i++){
+					if(i==1){selected_item = ' selected'}else{selected_item = ''}
+					slider_bullets += '<li class="button-item' + selected_item + '" id="item' + i + '">' + i + '</li>'
+				}
+				slider_bullets += '</ul>';
+				jQuery('#home-slider-<?php echo $randId; ?> .prev').after(slider_bullets);
+			}
+			
+		
+			/* slides width corrector */
+			if(!jQuery('body').hasClass('mobile-device')){
+				function widthCorrector(){
+					var widget = jQuery('#home-slider-<?php echo $randId; ?>');
+					widget.children('style').remove();
+					var widgetWidth = widget.width();
+					widget.find('.widget-slider li.item:first').attr('style', '');
+					var widgetItemWidth = widget.find('.widget-slider li.item:first').width();
+					var columnsCount = Math.round(widgetWidth/widgetItemWidth);
+					var columnWidth = Math.floor(widgetWidth/columnsCount);
+					var widgetItemsCss = '<style type="text/css">#home-slider-<?php echo $randId; ?> .widget-slider li.item{width:'+ columnWidth +'px;}</style>';
+					widget.append(widgetItemsCss);
+				}
+				widthCorrector();
+				jQuery(window).resize(function(){widthCorrector()});
+			}
+		
+			jQuery('#home-slider-<?php echo $randId; ?> .widget-slider').iosSlider({
+			  responsiveSlideWidth: true,
+			  snapToChildren: true,
+			  desktopClickDrag: true,
+			  onSlideChange: slideChange,
+			  infiniteSlider: false
+			  <?php echo $this->getSliderOptions(); ?>,
+			  navSlideSelector: '#home-slider-<?php echo $randId; ?> .slideSelectors .button-item',
+			  navNextSelector: '#home-slider-<?php echo $randId; ?> .next',
+			  navPrevSelector: '#home-slider-<?php echo $randId; ?> .prev'
+			  <?php if(isset($sliderConfig ['autoSlide'])): ?>, autoSlide: <?php echo $sliderConfig ['autoSlide']; ?><?php endif; ?>
+			  <?php if(isset($sliderConfig ['autoSlideTimer'])): ?>, autoSlideTimer: <?php echo $sliderConfig ['autoSlideTimer']; ?><?php endif; ?>
+			});
+			
+			function slideChange(args) {
+				jQuery('#home-slider-<?php echo $randId; ?> .slideSelectors .button-item').removeClass('selected');
+				jQuery('#home-slider-<?php echo $randId; ?> .slideSelectors .button-item:eq(' + (args.currentSlideNumber-1) + ')').addClass('selected');
+			}
+			
+			function widget_slider_height_<?php echo $randId; ?>(){
+				setTimeout(function(){
+					var widget_slider_height = 0;
+					jQuery('.widget-container #home-slider-<?php echo $randId; ?> .products-grid li.item').each(function(){
+						if(jQuery(this).height() > widget_slider_height){
+							widget_slider_height = jQuery(this).height();
+						}
+					})
+					jQuery('.widget-container #home-slider-<?php echo $randId; ?> .widget-slider').css({
+						'min-height': (widget_slider_height+2),
+						'height': 'auto'
+					});
+					
+				}, 1000);
+			}
+			widget_slider_height_<?php echo $randId; ?>();
+			jQuery(window).resize(function(){widget_slider_height_<?php echo $randId; ?>();});
+		  });
+		  
+		  jQuery(document).ready(function(){
+				jQuery('.widget-container').each(function(){
+					if(!jQuery(this).prev().hasClass('page-title')){
+						jQuery(this).addClass('no-title');
+					}
+				});
+				
+				jQuery('.ajax-fancybox').fancybox(
+					{
+					   hideOnContentClick : true,
+					   width:600,
+					   autoDimensions: true,
+					   type : 'iframe',
+					   showTitle: false,
+					   scrolling: 'no',
+					   afterLoad: function(){
+							setTimeout(function(){
+								var frameBodyHeight = jQuery('.fancybox-iframe').contents().find('body').height();
+								if(jQuery(window).height() > frameBodyHeight+30){
+									jQuery('.fancybox-inner').css('height', frameBodyHeight);
+								}
+							}, 1000);
+						}
+					}
+				);
+				
+				function coloredProducts(){
+					jQuery('.products-grid .item .color-box').each(function(){
+						boxWidth = jQuery(this).innerWidth();
+						itemCount = jQuery(this).find('.elem').size();
+						itemWidth = boxWidth/itemCount;
+						indent = Math.round((itemWidth - Math.floor(itemWidth))*itemCount);
+						jQuery(this).find('.elem').css('width', Math.floor(itemWidth));
+						jQuery(this).find('.elem:first').css('width', Math.floor(itemWidth)+indent);
+					});
+				}
+				coloredProducts();
+				jQuery(window).resize(function(){coloredProducts()});
+				
+				/* sale label check */
+				jQuery('.products-list li.item, .products-grid li.item').each(function(){
+					if(!jQuery(this).find('.label-sale').length){
+						jQuery(this).addClass('no-sale');
+					}
+				});
+			});
+			function showOptions(id){
+				jQuery('#fancybox'+id).trigger('click');
+			}
+			function setAjaxData(data,iframe){
+				if(data.status == 'ERROR'){
+					alert(data.message);
+				}else{
+					if(jQuery('.top-cart')){
+						jQuery('.top-cart').replaceWith(data.sidebar);
+					}
+					/* if(jQuery('.header .links')){
+						jQuery('.header .links').replaceWith(data.toplink);
+					} */
+					jQuery.fancybox.close();
+					jQuery('body').append('<div class="add-to-cart-success">' + data.message +' <a href="<?php echo $this->getUrl('checkout/cart'); ?>"><br /><span><?php echo $this->__('Go to Shopping Cart') ?></span></a><a href="#" class="btn-remove"><i class="fa fa-times"></i></a></div>');
+					setTimeout(function () {jQuery('.add-to-cart-success').slideUp(500)}, 5000);
+					jQuery('.add-to-cart-success a.btn-remove').click(function(){
+						jQuery(this).parent().slideUp(500);
+						return false;
+					});
+				}
+			}
+			function setLocationAjax(url,id){
+				url += 'isAjax/1';
+				url = url.replace("checkout/cart","ajax/index");
+				jQuery('#ajax_loader'+id).show();
+				try {
+					jQuery.ajax( {
+						url : url,
+						dataType : 'json',
+						success : function(data) {
+							jQuery('#ajax_loader'+id).hide();
+							setAjaxData(data,false);
+						}
+					});
+				} catch (e) {
+				}
+			}
+		</script>
+	<?php else: ?>
+		<div class="no-widget"><?php echo $this->__("Warning: Please make sure you have %s+ products to display in the slider, otherwise widget won't be displayed", $visibleProducts+1) ?></div>
+	<?php endif; ?>
+</div>
+<?php 
+	unset ($randId);
+}
+?>

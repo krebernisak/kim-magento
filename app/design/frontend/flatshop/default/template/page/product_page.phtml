@@ -1,0 +1,53 @@
+<?php
+/**
+ * Magento
+ *
+ * @category    design
+ * @package     meigeetheme_default
+ * @copyright   Copyright (c) 2012 MeigeeTeam. (http://www.meigeeteam.com)
+ *
+ *
+ *
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<?php 
+/*****/
+$sidebarPosition = MAGE::helper('ThemeOptionsFlatshop')->getThemeOptionsFlatshop('sidebar'); 
+$custompatern = MAGE::helper('ThemeOptionsFlatshop')->getThemeOptionsFlatshop('custompatern');
+$bgPatern = $paternurl = $mediaurl = "";
+if (!$custompatern):
+    $bgPatern = MAGE::helper('ThemeOptionsFlatshop')->getThemeOptionsFlatshop('patern');
+else:
+    $mediaurl = MAGE::helper('ThemeOptionsFlatshop')->getThemeOptionsFlatshop('mediaurl');
+    $paternurl = 'style="background:url('.$mediaurl.$custompatern.') center top repeat;"';
+endif;
+/*****/
+?>
+<!DOCTYPE html>
+<html lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<?php echo $this->getChildHtml('global_notices') ?>
+<?php echo $this->getChildHtml('header') ?>
+<div class="content-wrapper<?php echo $this->getBodyClass()?' '.$bgPatern:'' ?> <?php echo $paternurl; ?>">
+    <div class="home-page-wrapper">
+		<div class="container_12">
+			<?php echo $this->getChildHtml('breadcrumbs') ?>
+		</div>
+		<div class="main-container col1-layout">
+			<div class="col-main">
+				<?php echo $this->getChildHtml('global_messages') ?>
+				<?php echo $this->getChildHtml('content') ?>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+<?php echo $this->getChildHtml('footer') ?>
+<?php echo $this->getChildHtml('before_body_end') ?>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

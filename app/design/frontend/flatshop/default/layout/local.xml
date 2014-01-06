@@ -1,0 +1,522 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * @category    design
+ * @package     meigeetheme_default
+ * @copyright   Copyright (c) 2013-2014 MeigeeTeam. (http://www.meigeeteam.com)
+ */
+
+-->
+<layout version="0.1.0">
+
+<default>
+	<reference name="root">
+		<action method="setTemplate"><template>page/2columns.phtml</template></action>
+		<action method="addBodyClass" ifconfig="meigee_flatshop_general/appearance/retina"><classname>retina-ready</classname></action>
+	    <remove name="left" />
+    	<remove name="right" />
+	    <block type="core/text_list" name="sidebar" as="sidebar" translate="label">
+	        <label>Sidebar</label>
+	    </block>
+	    <reference name="top.links">
+	    	<action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+	    	<remove name="checkout_cart_link"/>
+	    	<block type="checkout/links" name="checkout_cart_link_custom">
+                <action method="addCheckoutLink"></action>
+            </block>
+	    	<action method="addLink" translate="label title" module="customer">
+	    		<label>My Account</label>
+	    		<url helper="customer/getAccountUrl"/>
+	    		<title>My Account</title>
+	    		<prepare/>
+	    		<urlParams/>
+	    		<position>10</position>
+	    		<liParams/>
+	    		<aParams>class="top-link-account"</aParams>
+	    	</action>
+		</reference>
+	</reference>
+
+	<reference name="head">
+        <action method="addJs"><script>meigee/jquery.min.js</script></action>
+        <action method="addItem"><type>skin_js</type><name>js/jquery.easing.js</name><params/></action>
+
+		<!-- Removing items set in the page.xml we don't need since we're integrating the HTML 5 boilerplate -->
+		<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name><if>lt IE 7</if></action>
+		<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
+		<action method="removeItem"><type>css</type><name>css/print.css</name></action>
+		<!-- End "Removing items" -->
+
+		<!-- Adding js script for lt IE9 -->
+		<action method="addItem"><type>skin_js</type><name>js/script_ie.js</name><params/><if>lt IE 10</if></action>  
+		
+		<action method="addItem"><type>skin_js</type><name>js/html5.js</name><params/><if>lt IE 9</if></action>
+		<action method="addItem"><type>skin_js</type><name>js/css3-mediaqueries.js</name><params/><if>lt IE 9</if></action>
+
+		<action method="addItem"><type>skin_js</type><name>js/selectivizr-min.js</name><params/><if>lt IE 9</if></action>
+		<!--<action method="addItem"><type>skin_js</type><name>js/dd_belatedpng.js</name><params/><if>lt IE 7</if></action>-->
+
+        <!-- Adding jQuery custom script -->
+		<action method="addItem"><type>skin_js</type><name>js/jquery.selectbox-0.2.min.js</name><params/></action>
+        <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery.iosslider.min.js</name><params/></action>
+
+		<!-- Adding "To Top" functionality -->
+		<action method="addItem" ifconfig="meigee_flatshop_general/otheroptions/totop"><type>skin_js</type><name>js/jquery.ui.totop.js</name><params/></action>
+
+		<!-- Grid -->
+		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/switchGrid" /></action>
+		
+		<!-- Font Awesome -->
+        <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
+		
+		<!-- Retina Styles -->
+        <action method="addCss" ifconfig="meigee_flatshop_general/appearance/retina"><stylesheet>css/retina.css</stylesheet><params/></action>
+		
+		<!-- Skin -->
+        <action method="addCss"><stylesheet>css/skin.css</stylesheet><params/></action>
+		<action method="addItem"><type>skin_css</type><name>css/styles-ie-8.css</name><params/><if>IE 8</if></action>
+		<action method="addItem"><type>skin_css</type><name>css/styles-ie-9.css</name><params/><if>IE 9</if></action>
+        <action method="addCss"><stylesheet>css/custom.css</stylesheet><params/></action>
+	</reference>
+
+    <!-- Removing sidebar blocks from default position and moving into sidebar reference ====================================================================== -->
+	<reference name="right">
+		<action method="unsetChild"><name>currency</name></action>
+		<action method="unsetChild"><name>cart_sidebar</name></action>
+		<action method="unsetChild"><name>catalog.compare.sidebar</name></action>
+		<action method="unsetChild"><name>right.reports.product.compared</name></action>
+		<action method="unsetChild"><name>right.reports.product.viewed</name></action>
+		<action method="unsetChild"><name>wishlist</name></action>
+		<action method="unsetChild"><name>sale.reorder.sidebar</name></action>
+		<action method="unsetChild"><name>right.poll</name></action>
+		<action method="unsetChild"><name>paypal.partner.right.logo</name></action>
+		<action method="unsetChild"><name>customer_form_mini_login</name></action>
+	</reference>
+	<reference name="left">
+		<action method="unsetChild"><name>left.permanent.callout</name></action>
+		<action method="unsetChild"><name>right.permanent.callout</name></action>
+		<action method="unsetChild"><name>tags_popular</name></action>
+		<action method="unsetChild"><name>left.newsletter</name></action>
+	</reference>
+    <reference name="header">
+        <block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/topcart.phtml" />
+        <block type="directory/currency" name="currency" template="directory/currency_header.phtml"/>
+    </reference>
+	<reference name="sidebar">
+		<block type="catalog/navigation" name="catalog.categories">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_categories/status">
+                <template>catalog/navigation/left_nav.phtml</template> 
+            </action>
+        </block>
+        <block type="catalog/product_compare_sidebar" name="catalog.compare.sidebar">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_compare/status">
+                <template>catalog/product/compare/sidebar.phtml</template> 
+            </action>
+        </block>
+		<block type="reports/product_viewed" name="sidebar.reports.product.viewed">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_viewed/status">
+                <template>reports/product_viewed.phtml</template> 
+            </action>
+        </block>
+        <block type="reports/product_compared" name="sidebar.reports.product.compared">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_compared/status">
+                <template>reports/product_compared.phtml</template> 
+            </action>
+        </block>
+		<block type="tag/popular" name="tags_popular">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_tags/status">
+                <template>tag/popular.phtml</template> 
+            </action>
+        </block>
+        <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" after="cart_sidebar">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_wishlist/status">
+                <template>wishlist/sidebar.phtml</template> 
+            </action>
+        </block>
+        <block type="poll/activePoll" name="sidebar.poll">
+            <action method="setPollTemplate"><template>poll/active.phtml</template><type>poll</type></action>
+            <action method="setPollTemplate"><template>poll/result.phtml</template><type>results</type></action>
+        </block>
+        <block type="newsletter/subscribe" name="newsletter">
+            <action method="setTemplate">
+                <template helper="ThemeOptionsFlatshop/newsletterLocation">
+					<arg>sidebar</arg>
+				</template>
+            </action>
+        </block>
+	</reference>
+    <!-- ===================================================================================================================== -->
+	
+	<reference name="header">
+		<block type="page/html" name="header_slider_container" template="meigee/headerslider.phtml">
+			<block type="cms/block" name="header_slider">
+				<action method="setBlockId"><block_id>header_slider</block_id></action>
+			</block>
+        </block>
+		<block type="cms/block" name="flatshop_header_blocks">
+			<action method="setBlockId"><block_id>flatshop_header_blocks</block_id></action>
+		</block>
+    </reference>
+    <reference name="footer">
+    	<!-- Uncomment following code to delete "Advanced Search" and "Orders and Returns" link fro the footer links  -->
+    	<!-- 
+    	<reference name="footer_links">
+			<action method="removeLinkByUrl"><url helper="catalogsearch/getAdvancedSearchUrl"/></action>
+			<remove name="return_link" />
+		</reference> 
+		-->
+        <block type="core/template" name="contactForm">
+            <action method="setTemplate" ifconfig="contacts/contacts/enabled"><template>contacts/form_footer.phtml</template></action>
+        </block>
+       <block type="newsletter/subscribe" name="footer.newsletter">
+            <action method="setTemplate">
+                <template helper="ThemeOptionsFlatshop/newsletterLocation">
+					<arg>footer</arg>
+				</template>
+            </action>
+        </block>
+		<block type="cms/block" name="flatshop_footer_banner">
+			<action method="setBlockId"><block_id>flatshop_footer_banner</block_id></action>
+		</block>
+		<block type="cms/block" name="flatshop_custom_footer">
+			<action method="setBlockId"><block_id>flatshop_custom_footer</block_id></action>
+		</block>
+		<block type="cms/block" name="flatshop_social_links">
+			<action method="setBlockId"><block_id>flatshop_social_links</block_id></action>
+		</block>
+    </reference>
+	<reference name="wishlist_link"> 
+		<action method="__set">
+			<name>a_params</name><value>class="top-link-wishlist"</value>
+		</action> 
+	</reference>
+</default>
+
+<cms_index_index>
+	<reference name="head">
+		<!-- Adding "Fancybox" -->
+		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/fancySwitcher" /></action>
+		<action method="addItem"><type>skin_js</type><name helper="ThemeOptionsFlatshop/fancySwitcherJS" /></action>
+	</reference>
+	<reference name="sidebar">
+        <block type="paypal/logo" name="paypal.partner.sidebar.logo" template="paypal/partner/logo.phtml"/>
+    </reference>
+</cms_index_index>
+<catalog_category_default>
+	<reference name="head">
+		<!-- Adding "Fancybox" -->
+		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/fancySwitcher" /></action>
+		<action method="addItem"><type>skin_js</type><name helper="ThemeOptionsFlatshop/fancySwitcherJS" /></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery.isotope.min.js</name><params/></action>
+	</reference>
+    <reference name="sidebar">
+        <block type="catalog/navigation" name="catalog.leftnav" after="catalog.categories">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_shop_by/status">
+                <template>catalog/navigation/left.phtml</template> 
+            </action>
+        </block>
+        <block type="paypal/logo" name="paypal.partner.sidebar.logo" template="paypal/partner/logo.phtml"/>
+    </reference>
+</catalog_category_default>
+<catalog_category_layered>
+	<reference name="head">
+		<!-- Adding "Fancybox" -->
+		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/fancySwitcher" /></action>
+		<action method="addItem"><type>skin_js</type><name helper="ThemeOptionsFlatshop/fancySwitcherJS" /></action>
+		
+		<action method="addItem"><type>skin_js</type><name>js/jquery.isotope.min.js</name><params/></action>
+	</reference>
+    <reference name="sidebar">
+    	<block type="catalog/layer_view" name="catalog.leftnav" before="-">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_shop_by/status">
+                <template>catalog/layer/view.phtml</template> 
+            </action>
+        </block>
+        <block type="paypal/logo" name="paypal.partner.sidebar.logo" template="paypal/partner/logo.phtml"/>
+    </reference>
+</catalog_category_layered>
+
+<catalogsearch_result_index>
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+	<reference name="head">
+		<!-- Adding "Fancybox" -->
+		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/fancySwitcher" /></action>
+		<action method="addItem"><type>skin_js</type><name helper="ThemeOptionsFlatshop/fancySwitcherJS" /></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery.isotope.min.js</name><params/></action>
+	</reference>
+</catalogsearch_result_index>
+
+<catalogsearch_advanced_index translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</catalogsearch_advanced_index>
+
+<catalogsearch_advanced_result>
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+	<reference name="head">
+		<!-- Adding "Fancybox" -->
+		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/fancySwitcher" /></action>
+		<action method="addItem"><type>skin_js</type><name helper="ThemeOptionsFlatshop/fancySwitcherJS" /></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery.isotope.min.js</name><params/></action>
+	</reference>
+</catalogsearch_advanced_result>
+
+<contacts_index_index translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</contacts_index_index>
+
+<reviews>
+    <reference name="root">
+        <action method="setTemplate"><template>page/1column.phtml</template></action>
+    </reference>
+</reviews>
+
+<review_product_list translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/1column.phtml</template></action>
+    </reference>
+    <reference name="content">
+		<action method="unsetChild"><name>product_review_list.count</name></action>
+		<action method="unsetChild"><name>roduct.info.review_list</name></action>
+    </reference>
+</review_product_list>
+
+<review_product_view translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/1column.phtml</template></action>
+    </reference>
+</review_product_view>
+
+<print>
+	<reference name="head">
+		<!-- Skin -->
+		<action method="addCss"><stylesheet>css/skin.css</stylesheet><params/></action>
+
+		<!-- Adding jQuery -->
+		<action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
+	</reference>
+</print>
+
+<catalog_product_view>
+	<reference name="head">
+		<!-- Adding "Fancybox" -->
+		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/fancySwitcher" /></action>
+		<action method="addItem"><type>skin_js</type><name helper="ThemeOptionsFlatshop/fancySwitcherJS" /></action>
+	</reference>
+    <reference name="content">
+        <reference name="product.info">
+            <block type="cms/block" name="product_custom">
+                <action method="setBlockId"><block_id>product_custom</block_id></action>
+            </block>
+            <block type="cms/block" name="product_custom_2">
+                <action method="setBlockId"><block_id>product_custom_2</block_id></action>
+            </block>
+        </reference>
+    </reference>
+    <reference name="sidebar">
+        <block type="paypal/logo" name="paypal.partner.sidebar.logo" template="paypal/partner/logo.phtml" />
+    </reference>
+</catalog_product_view>
+
+<catalog_product_view translate="label">
+	<reference name="root">
+		<action method="setTemplate"><template>page/product_page.phtml</template></action>
+	</reference>
+        <reference name="head">
+            <!--Cloud Zoom-->
+            <action method="addItem"><type>skin_js</type><name>js/cloud-zoom.1.0.2.min.js</name><params/></action>
+        </reference>
+        <reference name="product.info">
+            <!-- -->
+            <block type="catalog/product_view_tabs" name="product.info.tabs" as="info_tabs" template="catalog/product/view/tabs.phtml" >
+                <action method="addTab" translate="title" module="catalog">
+                	<alias>description</alias>
+                	<title>Product Description</title>
+                	<block>catalog/product_view_description</block>
+                	<template>catalog/product/view/description.phtml</template>
+                </action>
+                <action method="addTab" translate="title" module="catalog">
+                	<alias>upsell_products</alias>
+                	<title>We Also Recommend</title>
+                	<block>catalog/product_list_upsell</block>
+                	<template>catalog/product/list/upsell.phtml</template>
+                </action>
+                <action method="addTab" translate="title" module="catalog">
+                	<alias>additional</alias>
+                	<title>Additional Information</title>
+                	<block>catalog/product_view_attributes</block>
+                	<template>catalog/product/view/attributes.phtml</template>
+                </action>
+				<action method="addTab" translate="title" module="tax">
+					<alias>tags</alias>
+					<title>Product Tags</title> 
+					<block>tag/product_list</block>
+					<template>tag/list.phtml</template> 
+				</action> 
+            </block>
+            
+            <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
+                <action method="addToParentGroup"><group>detailed_info</group></action>
+            </block>
+            <block type="catalog/product_view_attributes" name="product.attributes" as="additional" template="catalog/product/view/attributes.phtml">
+                <action method="addToParentGroup"><group>detailed_info</group></action>
+            </block>
+            <!-- -->
+
+            <block type="catalog/product_list_related" name="catalog.product.related" template="catalog/product/list/related.phtml"/>
+            <block type="core/template" name="product_review_list.count" template="review/product/view/count.phtml" />
+            <block type="review/product_view_list" name="product.info.review_list" template="review/product/view/list.phtml">
+                <block type="review/form" name="product.review.form" as="review_form">
+                    <block type="page/html_wrapper" name="product.review.form.fields.before" as="form_fields_before" translate="label">
+                        <label>Review Form Fields Before</label>
+                        <action method="setMayBeInvisible"><value>1</value></action>
+                    </block>
+                </block>
+            </block>
+        </reference>
+</catalog_product_view>
+
+<catalog_category_layered_nochildren translate="label">
+    <remove name="sidebar.reports.product.viewed" />
+    <reference name="sidebar">
+        <block type="reports/product_viewed" name="sidebar.reports.product.viewed">
+            <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_viewed/status">
+                <template>reports/product_viewed.phtml</template> 
+            </action>
+        </block>
+    </reference>
+</catalog_category_layered_nochildren>
+
+<catalog_seo_sitemap translate="label">
+    <remove name="sidebar"/>
+</catalog_seo_sitemap>
+
+<tag_list_index translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</tag_list_index>
+
+<checkout_onepage_success translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</checkout_onepage_success>
+
+<checkout_onepage_failure translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</checkout_onepage_failure>
+
+<checkout_onepage_reorder>
+    <reference name="sidebar">
+        <action method="unsetChild"><name>reorder</name></action>
+    </reference>
+</checkout_onepage_reorder>
+
+<customer_logged_in>
+    <reference name="top.links">
+        <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
+        <action method="addLink" translate="label title" module="customer">
+        	<label>Log Out</label>
+        	<url helper="customer/getLogoutUrl"/>
+        	<title>Log Out</title>
+        	<prepare/>
+        	<urlParams/>
+        	<position>100</position>
+        	<liParams/>
+        	<aParams>class="top-link-logout"</aParams>
+        </action>
+    </reference>
+    <reference name="sidebar">
+        <block type="sales/reorder_sidebar" name="sale.reorder.sidebar" as="reorder" ifconfig="meigee_flatshop_sidebar/block_orders/status" template="sales/reorder/sidebar.phtml"/>
+    </reference>
+</customer_logged_in>
+
+<customer_logged_out>
+	<reference name="top.links">
+    	<action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+	    <action method="addLink" translate="label title" module="customer">
+	    	<label>Log In</label>
+	    	<url helper="customer/getLoginUrl"/>
+	    	<title>Log In</title>
+	    	<prepare/>
+	    	<urlParams/>
+	    	<position>100</position>
+	    	<liParams/>
+	    	<aParams>class="top-link-login"</aParams>
+	    </action>
+	</reference>
+</customer_logged_out>
+
+<customer_account>
+    <reference name="sidebar">
+		<action method="unsetChild"><name>reorder</name></action>
+    </reference>
+</customer_account>
+
+<customer_account_index translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+    <reference name="sidebar">
+        <action method="unsetChild"><name>sidebar.poll</name></action>
+        <action method="unsetChild"><name>catalog.compare.sidebar</name></action>
+    </reference>
+    <remove name="sidebar.newsletter"/>
+</customer_account_index>
+
+<sendfriend_product_send translate="label">
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</sendfriend_product_send>
+
+<paypal_express_review translate="label">
+    <remove name="right"/>
+    <remove name="left"/>
+    <remove name="sidebar"/>
+</paypal_express_review>
+
+<sales_billing_agreement_index>
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</sales_billing_agreement_index>
+
+<sales_billing_agreement_view>
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</sales_billing_agreement_view>
+
+<sales_recurring_profile_index>
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</sales_recurring_profile_index>
+
+<sales_recurring_profile_view__tabs>
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns.phtml</template></action>
+    </reference>
+</sales_recurring_profile_view__tabs>
+
+<print>
+    <reference name="head">
+        <action method="addCss"><stylesheet>css/grid.css</stylesheet></action>
+    </reference>
+</print>
+
+</layout>

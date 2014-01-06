@@ -1,0 +1,132 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_blank
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+ 
+.header-slider-holder{top: 0; margin: 0;}
+ 
+.fancybox-overlay,
+.ajax-box-overlay{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+	zoom: 1;
+}
+.lockshowloading,
+.ajax-box-overlay i.load{
+	display: none;
+}
+
+.slider-container .prev,
+.slider-container .next,
+ .opc .active .step-title .number{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+	zoom: 1;
+}
+
+.slider-container .prev:hover,
+.slider-container .next:hover{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+}
+
+
+.footer-block section.block-subscribe,
+header#header .top-cart .block-content.active,
+#nav ul,
+#nav div{
+	border:1px solid #ddd;
+	border-top: 0;
+}
+
+
+
+.product-banner,
+.bottom-product-related .block-related .block-content li.item .product,
+.tabs-wrapper,
+.products-grid li.item .product-container,
+.flipping-banner,
+.footer-block .footer-banner{
+	border:1px solid #ddd;
+}
+
+#onepagecheckout_orderform .col3-set.onepagecheckout_datafields .col-1,
+#onepagecheckout_orderform .col3-set.onepagecheckout_datafields .col-2,
+#onepagecheckout_orderform .col3-set.onepagecheckout_datafields .col-3,
+.block-related,
+.toolbar,
+aside.sidebar section{
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+#footer .contacts-footer-content input.input-text, 
+#footer .contacts-footer-content .input-box textarea{
+	background-color:#000;
+}
+
+.cart .totals .checkout-types button.button span,
+.footer-block section.block-subscribe .actions button.button span,
+aside.sidebar .actions button span{background: none;}
+
+.cart .totals .checkout-types button.button > span,
+.footer-block section.block-subscribe .actions button.button > span,
+aside.sidebar .actions a,
+aside.sidebar .actions button > span{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+	zoom: 1;
+}
+.cart .totals .checkout-types button.button:hover > span,
+.footer-block section.block-subscribe .actions button.button:hover > span
+aside.sidebar .actions a:hover,
+aside.sidebar .actions button:hover > span{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+	zoom: 1;
+}
+
+.products-grid .btn-quick-view i,
+.products-list .btn-quick-view i{
+	filter: alpha(opacity=0);
+}
+.products-grid li.item:hover .btn-quick-view i,
+.products-list li.item:hover .btn-quick-view i{
+	filter: alpha(opacity=100);
+}
+
+/* header#header .header-toolbar-wrapper > .container_12,
+header#header .header-toolbar-wrapper > .container_12 > .grid_12,
+header#header .header-toolbar-wrapper .header-toolbar,
+header#header .form-language,
+header#header .form-currency,
+.sbHolder,
+.sbOptions,
+header#header .header-toolbar-wrapper{
+    z-index: 8!important;
+}
+.header-slider-container,
+.header-slider-container .container,
+.header-slider-container .iosSlider,
+.header-slider-container .iosSlider .slider,
+.header-slider-container .iosSlider .slider .item,
+.header-slider-container .iosSlider .slider .item img{
+    z-index: 7!important;
+	position: relative;
+} */

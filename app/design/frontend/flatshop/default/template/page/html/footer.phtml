@@ -1,0 +1,69 @@
+<?php
+/**
+ * Magento
+ *
+ * @category    design
+ * @package     meigeetheme_default
+ * @copyright   Copyright (c) 2012 MeigeeTeam. (http://www.meigeeteam.com)
+ */
+ 
+$ownImage = false; 
+if(Mage::getStoreConfig('meigee_flatshop_design/footer/footer_columns_wrapper_img')){
+	$ownImage = true;
+	$footer_img = ' style="background:url('.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'images/'.Mage::getStoreConfig('meigee_flatshop_design/footer/footer_columns_wrapper_img').') center top no-repeat;"'; 
+}
+?>
+	<div class="container_12">
+		<div class="footer-block">
+			<?php if($this->getChildHtml('footer.newsletter')): ?>
+			<div class="grid_4">
+				<?php echo $this->getChildHtml('footer.newsletter') ?>
+			</div>
+			<?php endif; ?>
+			<?php if ($this->getChildHtml('flatshop_footer_banner')): ?>
+			<div class="grid_8">
+				<div class="footer-banner">
+					<?php // Predefined Static Block
+						echo $this->getChildHtml('flatshop_footer_banner');
+					?>
+				</div>
+			</div>
+			<?php endif; ?>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<footer id="footer">
+	<div class="container_12 footer-top-links">
+		<div class="grid_12">
+			<?php echo $this->getChildHtml('footer_links') ?>
+			<?php echo $this->getChildHtml('cms_footer_links') ?>
+		</div>
+		<div class="clear"></div>
+    </div>
+	<div class="footer-columns-wrapper"<?php if($ownImage == true){echo $footer_img;} ?>>
+		<div class="container_12">
+			<div class="grid_12">
+				<?php // Predefined Static Block
+				if ($static_html = $this->getChildHtml('flatshop_custom_footer')):
+					echo $static_html;
+				endif; ?>
+				<?php echo $this->getChildHtml('contactForm') ?>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="container_12 footer-bottom-block">
+		<div class="grid_12">
+			<?php // Predefined Static Block
+			if ($static_html = $this->getChildHtml('flatshop_social_links')):
+				echo $static_html;
+			endif; ?>
+			<address><?php echo $this->getCopyright() ?></address>
+			<div class="clear"></div>
+			<?php echo $this->getChildHtml('store_switcher') ?>
+		</div>
+		<div class="clear"></div>
+    </div>
+</footer>
