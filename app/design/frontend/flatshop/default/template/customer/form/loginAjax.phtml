@@ -22,6 +22,7 @@
 		<div class="clear"></div>
     </div>
 	<form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
+		<?php echo $this->getBlockHtml('formkey'); ?>
 		<div class="indent">
 			<h4><?php echo $this->__('Registered customers') ?></h4>
 			<p><?php echo $this->__('If you have an account with us, please log in.') ?></p>
