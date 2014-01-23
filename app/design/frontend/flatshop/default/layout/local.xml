@@ -15,7 +15,9 @@
 	<reference name="root">
 		<action method="setTemplate"><template>page/2columns.phtml</template></action>
 		<action method="addBodyClass" ifconfig="meigee_flatshop_general/appearance/retina"><classname>retina-ready</classname></action>
-	    <remove name="left" />
+		<action method="addBodyClass" ifconfig="meigee_flatshop_general/header/floatingheader"><classname>floating-header</classname></action>
+		<action method="addBodyClass" ifconfig="meigee_flatshop_general/layout/sitelayout"><classname>boxed-layout</classname></action>
+	    <!-- <remove name="left" /> -->
     	<remove name="right" />
 	    <block type="core/text_list" name="sidebar" as="sidebar" translate="label">
 	        <label>Sidebar</label>
@@ -62,6 +64,7 @@
 		<action method="addItem"><type>skin_js</type><name>js/jquery.selectbox-0.2.min.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
 		<action method="addItem"><type>skin_js</type><name>js/jquery.iosslider.min.js</name><params/></action>
+		<action method="addItem" ifconfig="meigee_flatshop_bgslider/slideroptions/enabled"><type>skin_js</type><name>js/jquery.backstretch.min.js</name><params/></action>
 
 		<!-- Adding "To Top" functionality -->
 		<action method="addItem" ifconfig="meigee_flatshop_general/otheroptions/totop"><type>skin_js</type><name>js/jquery.ui.totop.js</name><params/></action>
@@ -80,6 +83,9 @@
 		<action method="addItem"><type>skin_css</type><name>css/styles-ie-8.css</name><params/><if>IE 8</if></action>
 		<action method="addItem"><type>skin_css</type><name>css/styles-ie-9.css</name><params/><if>IE 9</if></action>
         <action method="addCss"><stylesheet>css/custom.css</stylesheet><params/></action>
+        <block  type="core/template" 
+            name="bgslider"
+            template="meigee/bgslider.phtml" />
 	</reference>
 
     <!-- Removing sidebar blocks from default position and moving into sidebar reference ====================================================================== -->
@@ -287,7 +293,7 @@
     </reference>
     <reference name="content">
 		<action method="unsetChild"><name>product_review_list.count</name></action>
-		<action method="unsetChild"><name>roduct.info.review_list</name></action>
+		<action method="unsetChild"><name>product.info.review_list</name></action>
     </reference>
 </review_product_list>
 
@@ -463,6 +469,20 @@
 <customer_account>
     <reference name="sidebar">
 		<action method="unsetChild"><name>reorder</name></action>
+        <block type="customer/account_navigation" name="customer_account_navigation" before="-" template="customer/account/navigation.phtml">
+            <action method="addLink" translate="label" module="customer"><name>account</name><path>customer/account/</path><label>Account Dashboard</label></action>
+            <action method="addLink" translate="label" module="customer"><name>account_edit</name><path>customer/account/edit/</path><label>Account Information</label></action>
+            <action method="addLink" translate="label" module="customer"><name>address_book</name><path>customer/address/</path><label>Address Book</label></action>
+            <action method="addLink" translate="label"><name>billing_agreements</name><path>sales/billing_agreement/</path><label>Billing Agreements</label></action>
+            <action method="addLink" translate="label"><name>recurring_profiles</name><path>sales/recurring_profile/</path><label>Recurring Profiles</label></action>
+            <action method="addLink" translate="label" module="review"><name>reviews</name><path>review/customer</path><label>My Product Reviews</label></action>
+            <action method="addLink" translate="label" module="tag"><name>tags</name><path>tag/customer/</path><label>My Tags</label></action>
+            <action method="addLink" translate="label" module="wishlist" ifconfig="wishlist/general/active"><name>wishlist</name><path>wishlist/</path><label>My Wishlist</label></action>
+            <action method="addLink" translate="label" module="newsletter"><name>newsletter</name><path>newsletter/manage/</path><label>Newsletter Subscriptions</label></action>
+            <action method="addLink" translate="label" module="downloadable"><name>downloadable_products</name><path>downloadable/customer/products</path><label>My Downloadable Products</label></action>
+        </block>
+        <block type="catalog/product_compare_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
+        <remove name="tags_popular"/>
     </reference>
 </customer_account>
 
