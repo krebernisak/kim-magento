@@ -39,7 +39,7 @@
 
     switch ($productpage_pagelayout) {
         case 'productpage_extralarge':
-            $imgSize = null;
+            $imgSize = 1280;
             break;
         case 'productpage_large':
             $imgSize = 720;
@@ -48,7 +48,7 @@
             $imgSize = 498;
             break;
         case 'productpage_small':
-            $imgSize = 286;
+            $imgSize = 650;
             break;
         default:
             $imgSize = 100;
@@ -70,8 +70,8 @@
             <ul class="carousel-ul">
             <?php foreach ($this->getGalleryImages() as $_image): ?>
                 <li>
-                    <a class='cloud-zoom-gallery' data-zoom="useZoom: 'zoom', smallImage: '<?php echo $helpImg->getImg($this->getProduct(), 'thumbnail', $imgSize, null); ?>' " href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile()); ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img src="<?php echo $helpImg->getImg($this->getProduct(), 'thumbnail', $imgSize, null, $_image->getFile()); ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('more_views', $this, $_image); ?> alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a>
-                </li>
+					<a class='cloud-zoom-gallery' data-zoom="useZoom: 'zoom', smallImage: '<?php echo $helpImg->getImg($_product, 'thumbnail', $imgSize, null, $_image->getFile()); ?>' " href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile()); ?>" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>"><img src="<?php echo $helpImg->getImg($this->getProduct(), 'thumbnail', $imgSize, null, $_image->getFile()); ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('more_views', $this, $_image); ?> alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" /></a>
+				</li>
             <?php endforeach; ?>
             </ul>
         </div>
@@ -81,10 +81,10 @@
         <ul class="no-slider">
             <?php foreach ($this->getGalleryImages() as $_image): ?>
                 <li>
-                    <a class='cloud-zoom-gallery' data-zoom="useZoom: 'zoom', smallImage: '<?php echo $helpImg->getImg($this->getProduct(), 'thumbnail', $imgSize, null); ?>' " href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile()); ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img src="<?php echo $helpImg->getImg($this->getProduct(), 'thumbnail', $imgSize, null, $_image->getFile()); ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('more_views', $this, $_image); ?> alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a>
-                </li>
+					<a class='cloud-zoom-gallery' data-zoom="useZoom: 'zoom', smallImage: '<?php echo $helpImg->getImg($_product, 'thumbnail', $imgSize, null, $_image->getFile()); ?>' " href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile()); ?>" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>"><img src="<?php echo $helpImg->getImg($this->getProduct(), 'thumbnail', $imgSize, null, $_image->getFile()); ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('more_views', $this, $_image); ?> alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" /></a>
+				</li>
             <?php endforeach; ?>
-        </ul>        
+        </ul>
         <?php endif; ?>
     </div>
 </div>

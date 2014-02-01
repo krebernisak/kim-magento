@@ -114,6 +114,17 @@ body.ajax-index-options .product-shop .product-options-bottom .price-box{
 				}
 			}.bind(productAddToCartForm);
 		//]]>
+		
+		jQuery(window).load(function(){
+			/* Ratings */
+			jQuery('.ratings .rating-links a').on('click', function(){
+				link = jQuery(this).attr('href');
+				parent.document.getElementsByClassName('fancybox-close')[0].click();
+				parent.document.location.href = link;
+				return false;
+			});
+		});
+		
 		</script>
 		<style type="text/css">
 			body{width:auto!important;}

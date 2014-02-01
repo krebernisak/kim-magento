@@ -139,6 +139,15 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
+                        <sitelayout translate="label">
+                            <label>Site layout</label>
+                            <frontend_type>Select</frontend_type>
+                            <source_model>ThemeOptionsFlatshop/sitelayout</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sitelayout>
                         <responsiveness translate="label">
                             <label>Responsive layout</label>
                             <frontend_type>Select</frontend_type>
@@ -180,10 +189,29 @@
                         </cartpage>
                     </fields>
                 </layout>
+        <header translate="label">
+                    <label>Header</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                    <floatingheader translate="label">
+                        <label>Floating Header</label>
+                        <frontend_type>Select</frontend_type>
+                        <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                        <sort_order>1</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </floatingheader>
+                    </fields>
+                </header>
 		<customlogo translate="label">
                     <label>Custom Logo</label>
                     <frontend_type>text</frontend_type>
-                    <sort_order>3</sort_order>
+                    <sort_order>4</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>    
@@ -306,7 +334,7 @@
                         <menu_static translate="label">
                             <label>Static Blocks In Header Navigation</label>
                             <frontend_type>text</frontend_type>
-                            <comment>Comma separated list of static block identifiers. These static blocks will be displayed in header navigation.</comment>
+                            <comment>Comma separated list of static block identifiers. These static blocks will be displayed in header navigation. Will work only for usual menu.</comment>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -1643,6 +1671,18 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </enabled>
+                        <staticblock translate="label">
+                            <label>Static Block</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>You can replace header slider with any static block you have. Set the ID of that static block</comment>
+                            <depends>
+                                <enabled>0</enabled>
+                            </depends>
+                        </staticblock>
 						<slidertype translate="label comment">
                             <label>Slider Type</label>
                             <comment>Choose wide or boxed slider</comment>
@@ -1652,6 +1692,9 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
                         </slidertype>
                         <slides translate="label">
                             <label>Slides</label>
@@ -1688,9 +1731,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>Choose "No" to show slider on every page</comment>
-                            <depends>
-                                <enabled>1</enabled>
-                            </depends>
                         </onlyhome>
                         <autoSlide translate="label">
                             <label>Auto Slide</label>
@@ -1754,5 +1794,127 @@
                 </coin>
             </groups>
         </meigee_flatshop_headerslider>
+        <meigee_flatshop_bgslider translate="label" module="ThemeOptionsFlatshop">
+            <label>Background Slider</label>
+            <sort_order>6</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>meigee_tab</tab>
+            <groups>
+                <slides translate="label">
+                    <label>Background Slides</label>
+                    <frontend_type>text</frontend_type>
+            <comment><![CDATA[Background slider is working correct only on boxed layout. <em>Meigee -> Theme Options -> General Options -> Layout Horizontal Tab -> Site Layout</em>]]></comment>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <slide>                      
+                            <label>Slide</label>
+                            <frontend_type>image</frontend_type>
+                            <comment>JPG,GIF,PNG</comment>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                                            
+                        </slide>
+                        <slide_2>                      
+                            <label>Slide</label>
+                            <frontend_type>image</frontend_type>
+                            <comment>JPG,GIF,PNG</comment>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                                            
+                        </slide_2>
+                        <slide_3>                      
+                            <label>Slide</label>
+                            <frontend_type>image</frontend_type>
+                            <comment>JPG,GIF,PNG</comment>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                                            
+                        </slide_3>
+                        <slide_4>                      
+                            <label>Slide</label>
+                            <frontend_type>image</frontend_type>
+                            <comment>JPG,GIF,PNG</comment>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                                            
+                        </slide_4>
+                        <slide_5>                      
+                            <label>Slide</label>
+                            <frontend_type>image</frontend_type>
+                            <comment>JPG,GIF,PNG</comment>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                                            
+                        </slide_5>
+                    </fields>
+                </slides>
+                <slideroptions translate="label">
+                    <label>Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <fade translate="label">
+                            <label>Fade</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </fade>
+                        <duration translate="label">
+                            <label>Duration</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </duration>
+                    </fields>
+                </slideroptions>
+            </groups>
+        </meigee_flatshop_bgslider>
     </sections>
 </config>

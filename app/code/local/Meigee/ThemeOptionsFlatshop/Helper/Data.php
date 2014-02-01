@@ -108,6 +108,9 @@ class Meigee_ThemeOptionsFlatshop_Helper_Data extends Mage_Core_Helper_Abstract
 		case 'relatedblock':
  			return Mage::getStoreConfig('meigee_flatshop_productpage/productpage/related_location');
  		break;
+		case 'bgslider':
+ 			return Mage::getStoreConfig('meigee_flatshop_bgslider');
+ 		break;
  	}
  }
  

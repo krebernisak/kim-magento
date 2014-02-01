@@ -23,6 +23,13 @@
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+
+if(Mage::registry('current_product')){
+	$product_url = Mage::getBaseUrl('link').$this->getProduct()->getUrlPath();
+}else{
+	$product_url = $this->getProduct()->getProductUrl();
+}
+ 
 ?>
 <?php if ($this->getReviewsCount()): ?>
     <div class="ratings">
@@ -32,9 +39,9 @@
             </div>
         <?php endif;?>
         <p class="rating-links">
-            <a href="#review-form"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></a>
+            <a href="<?php echo $product_url; ?>#customer-reviews"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></a>
             <span class="separator">|</span>
-            <a href="#review-form"><?php echo $this->__('Add Your Review') ?></a>
+            <a href="<?php echo $product_url; ?>#customer-reviews"><?php echo $this->__('Add Your Review') ?></a>
         </p>
     </div>
 <?php elseif ($this->getDisplayIfEmpty()): ?>

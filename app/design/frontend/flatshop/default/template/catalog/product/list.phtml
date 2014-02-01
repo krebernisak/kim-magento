@@ -112,6 +112,11 @@
 										<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>','<?php echo $_product->getId()?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
 										<span id='ajax_loader<?php echo $_product->getId()?>' class="ajax-loader-item" style='display:none'><img src='<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif')?>'/></span>
 									</div>
+								<?php else: ?>
+									<div class="button-holder">
+										<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button" onclick="showOptions('<?php echo $_product->getId()?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+										<a href='<?php echo $this->getUrl('ajax/index/options',array('product_id'=>$_product->getId()));?>' class='ajax-fancybox' id='fancybox<?php echo $_product->getId()?>' style='display:none'>Test</a>
+									</div>
 								<?php endif; ?>
 							<?php }else{ ?>
 								 <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
@@ -186,6 +191,11 @@
 									<div class="button-holder">
 										<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>','<?php echo $_product->getId()?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
 										<span id='ajax_loader<?php echo $_product->getId()?>' class="ajax-loader-item cart-item" style='display:none'><img src='<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif')?>'/></span>
+									</div>
+								<?php else: ?>
+									<div class="button-holder">
+										<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button" onclick="showOptions('<?php echo $_product->getId()?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+										<a href='<?php echo $this->getUrl('ajax/index/options',array('product_id'=>$_product->getId()));?>' class='ajax-fancybox' id='fancybox<?php echo $_product->getId()?>' style='display:none'>Test</a>
 									</div>
 								<?php endif; ?>
 							<?php }
@@ -449,7 +459,11 @@
 			}
 		}
     </script>
-    <?php } ?>
+    <?php }else{ ?>
+	<script type="text/javascript">
+		jQuery('.lockshow-bg').remove();
+	</script>
+	<?php } ?>
     <div class="toolbar-bottom">
         <?php echo $this->getToolbarHtml() ?>
     </div>

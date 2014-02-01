@@ -14,27 +14,29 @@
     $customlogo = MAGE::helper('ThemeOptionsFlatshop')->getThemeOptionsFlatshop('customlogo');
     $mediaurl = MAGE::helper('ThemeOptionsFlatshop')->getThemeOptionsFlatshop('mediaurl');
 ?>
-<header id="header">
-    <div class="container_12">
-        <div class="grid_12">
-			<?php if($this->getWelcome()): ?>
-				<p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></p>
-			<?php endif; ?>
-           <?php if ($customlogo['logo_status'] == 0): ?>
-				<h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('logo'); ?> alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
-				<?php else:?>
-				<h1 class="logo"><strong><?php echo $customlogo['logo_alt']; ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $customlogo['logo_alt']; ?>" class="logo"><img src="<?php echo $mediaurl.$customlogo['logo']; ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('logo_custom'); ?> alt="<?php echo $customlogo['logo_alt']; ?>" /></a></h1>
-			<?php endif; ?>
-			<?php echo $this->getChildHtml('topMenu') ?>
-			<div class="menu-button"><i class="fa fa-bars"></i><?php echo $this->__('Menu') ?></div>
-			<div class="quick-access">
-                <?php echo $this->getChildHtml('cart_sidebar') ?>
-				<?php echo $this->getChildHtml('topSearch') ?>
-				<div class="clear"></div>
-			</div>
-            <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
+<header id="header" <?php if ( Mage::getStoreConfig('meigee_flatshop_headerslider/coin/slidertype') == 1 ){ echo 'class="boxed-slider"';} else { echo 'class="wide-slider"';} ?>>
+	<div class="header-wrapper">
+	    <div class="container_12">
+	        <div class="grid_12">
+				<?php if($this->getWelcome()): ?>
+					<p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></p>
+				<?php endif; ?>
+	           <?php if ($customlogo['logo_status'] == 0): ?>
+					<h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('logo'); ?> alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+					<?php else:?>
+					<h1 class="logo"><strong><?php echo $customlogo['logo_alt']; ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $customlogo['logo_alt']; ?>" class="logo"><img src="<?php echo $mediaurl.$customlogo['logo']; ?>" <?php echo MAGE::helper('ThemeOptionsFlatshop/Retina')->getRetinaData('logo_custom'); ?> alt="<?php echo $customlogo['logo_alt']; ?>" /></a></h1>
+				<?php endif; ?>
+				<?php echo $this->getChildHtml('topMenu') ?>
+				<div class="menu-button"><i class="fa fa-bars"></i><?php echo $this->__('Menu') ?></div>
+				<div class="quick-access">
+	                <?php echo $this->getChildHtml('cart_sidebar') ?>
+					<?php echo $this->getChildHtml('topSearch') ?>
+					<div class="clear"></div>
+				</div>
+	            <div class="clear"></div>
+	        </div>
+	        <div class="clear"></div>
+	    </div>
     </div>
 	<div class="header-toolbar-wrapper<?php if($this->getChildHtml('header_slider_container')){echo ' slider-on';} ?>">
 		<div class="container_12">

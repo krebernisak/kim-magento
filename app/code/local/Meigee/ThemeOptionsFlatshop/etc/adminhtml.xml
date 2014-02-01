@@ -30,6 +30,10 @@
                                         <title>Header Slider</title>
                                         <sort_order>5</sort_order>
                                     </meigee_flatshop_headerslider>
+                                    <meigee_flatshop_bgslider>
+                                        <title>Background Slider</title>
+                                        <sort_order>6</sort_order>
+                                    </meigee_flatshop_bgslider>
                                 </children>
                             </config>
                         </children>
