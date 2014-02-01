@@ -189,6 +189,7 @@ header#header .top-cart .block-content .color-box .item.even,
 #nav .color-box .item.even,
 #custommenu .color-box .item.even,
 header#header .form-search button > span,
+#custommenu > div.menu.act > div.parentMenu > a,
 #nav > li.active > a,
 button.button:hover > span{background-color:#' . $this->baseColors['secondcolor'] . ';}
 
@@ -210,31 +211,40 @@ $css .= '
 header#header{background-color:#' . $this->headerColors['header_bg'] . ';}
 
 /* Navigation text color */
-#nav li a{color:#' . $this->headerColors['nav_text'] . ';}
+#nav li a,
+header#header .nav-container #custommenu div.menu a span{color:#' . $this->headerColors['nav_text'] . '!important;}
 
 /* Navigation active text color */
-#nav li.active a,
-#nav li.active a span.num { color:#' . $this->headerColors['nav_active_text'] . '; }
+#nav > li.active > a,
+#nav > li.active > a span.num,
+header#header .nav-container #custommenu div.menu.act span i.num,
+header#header .nav-container #custommenu div.menu.act > .parentMenu > a > span { color:#' . $this->headerColors['nav_active_text'] . '!important; }
 
 /* Navigation hover bg */
-#nav > li > a:hover {background-color: #' . $this->headerColors['nav_hover_bg'] . ';}
+#nav > li > a:hover,
+header#header .nav-container #custommenu div.menu a:hover{background-color: #' . $this->headerColors['nav_hover_bg'] . ';}
 
 /* Navigation active bg */
 #nav > li.active > a,
-button.button:hover > span{background-color:#' . $this->headerColors['nav_active_bg'] . ';}
+#custommenu > div.menu.act > div.parentMenu > a,
+#custommenu button.button:hover > span,
+#nav button.button:hover > span{background-color:#' . $this->headerColors['nav_active_bg'] . '!important;}
 
 /* Navigation button border radius */
 #nav li a:hover,
 #nav li.over a,
-#nav li.active a{
+#nav li.active a,
+header#header .nav-container #custommenu div.menu a:link, 
+header#header .nav-container #custommenu div.menu a:visited{
 	-webkit-border-radius: ' . $this->headerColors['nav_button_border_radius'] . 'px;
     -moz-border-radius: ' . $this->headerColors['nav_button_border_radius'] . 'px;
     border-radius: ' . $this->headerColors['nav_button_border_radius'] . 'px;
 }
 
 /* Navigation divider color */
-#nav li.level-top > a > span{
-	border-right-color: #' . $this->headerColors['nav_divider_color'] . ';
+#nav li.level-top > a > span,
+header#header .nav-container #custommenu div.menu a span{
+	border-right-color: #' . $this->headerColors['nav_divider_color'] . '!important;
 }';
 
 $css .= '

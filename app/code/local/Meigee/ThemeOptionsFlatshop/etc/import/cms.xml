@@ -226,6 +226,19 @@
                     <item>0</item>
                 </stores>
             </item>
+            <item>
+                <title>Instead of header slider block</title>
+                <identifier>flatshop_instead_of_slider</identifier>
+                <content><![CDATA[<div style="margin-left:75px;">
+    <h2 style="margin-top: 150px;">One by Boutique</h2>
+    <h3>What's in store for summer time</h3>
+    <p style="margin-bottom: 150px;">Romantic, trendy, classic or casual? We have dresses for every day and every style.<br> From short-short to loonger styles-or somewhere in between.</p>
+</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
         </blocks>
     </cms>
 </root>

@@ -95,23 +95,36 @@
 					jQuery(this).parent().removeClass('failed');
 				}
 			});
-			
 			if( !jQuery('#contactForm .validation-failed').length ){
 				jQuery('#ajax-loader').show();
-				jQuery.ajax({
-					url: '<?php echo $this->getUrl('meigeeactions/contacts/') ?>',
-					cache: false
-				}).done(function(html){
-					jQuery('#contactForm').before('<div class="contact-form-holder" />').remove();
-					jQuery('.contact-form-holder').after(html).remove();
-					labelsAnimation();
-					jQuery('#feedback').fadeIn('medium');
-					setTimeout(function(){
-						jQuery('#feedback').fadeOut('slow', function() {
-							jQuery(this).remove();
-						});
-					}, 5000);
-				});
+				
+				var formId = 'contactForm';
+				var contactForm = new VarienForm(formId, true);
+				var postUrl = '<?php echo Mage::getUrl(); ?>contacts/index/post/';
+				new Ajax.Updater(
+					{ success:'formSuccess' }, postUrl, {
+						method:'post',
+						asynchronous:true,
+						evalScripts:false,
+						onComplete:function(request, json) {
+							jQuery.ajax({
+								url: '<?php echo $this->getUrl('meigeeactions/contacts/') ?>',
+								cache: false
+							}).done(function(html){
+								jQuery('#contactForm').before('<div class="contact-form-holder" />').remove();
+								jQuery('.contact-form-holder').after(html).remove();
+								labelsAnimation();
+								jQuery('#feedback').fadeIn('medium');
+								setTimeout(function(){
+									jQuery('#feedback').fadeOut('slow', function() {
+										jQuery(this).remove();
+									});
+								}, 5000);
+							});
+						},
+						parameters: $(formId).serialize(true),
+					}
+				);
 			}
 		}
 	</script>

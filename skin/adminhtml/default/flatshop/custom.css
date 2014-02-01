@@ -61,7 +61,9 @@ select#meigee_flatshop_theming_paterns_patern option[value="light_wool"] {
 #meigee_flatshop_sidebar_block_tags table,
 #meigee_flatshop_sidebar_block_orders table,
 #meigee_flatshop_sidebar_block_subscribe table,
-#headerslider_coin table {
+#headerslider_coin table,
+#meigee_flatshop_bgslider_slides table,
+#meigee_flatshop_bgslider_slideroptions table{
 	border-spacing:0 5px !important;
 }
 #meigee_flatshop_general_appearance table td,
@@ -83,7 +85,9 @@ select#meigee_flatshop_theming_paterns_patern option[value="light_wool"] {
 #meigee_flatshop_sidebar_block_tags table td,
 #meigee_flatshop_sidebar_block_orders table td,
 #meigee_flatshop_sidebar_block_subscribe table td,
-#headerslider_coin table td { 
+#headerslider_coin table td,
+#meigee_flatshop_bgslider_slides td,
+#meigee_flatshop_bgslider_slideroptions td { 
 	padding: 20px !important;
 }
 #meigee_flatshop_general_appearance td.label,
@@ -105,7 +109,9 @@ select#meigee_flatshop_theming_paterns_patern option[value="light_wool"] {
 #meigee_flatshop_sidebar_block_tags td.label,
 #meigee_flatshop_sidebar_block_orders td.label,
 #meigee_flatshop_sidebar_block_subscribe td.label,
-#headerslider_coin td.label {
+#headerslider_coin td.label,
+#meigee_flatshop_bgslider_slides td.label,
+#meigee_flatshop_bgslider_slideroptions td.label {
 	background: #f5f5f5 !important;
 	border:1px solid #ebebeb !important;
 	border-right:none !important;
@@ -130,7 +136,9 @@ select#meigee_flatshop_theming_paterns_patern option[value="light_wool"] {
 #meigee_flatshop_sidebar_block_tags td.value,
 #meigee_flatshop_sidebar_block_orders td.value,
 #meigee_flatshop_sidebar_block_subscribe td.value,
-#headerslider_coin td.value {
+#headerslider_coin td.value,
+#meigee_flatshop_bgslider_slides td.value,
+#meigee_flatshop_bgslider_slideroptions td.value {
 	width:400px;
 	background: #f5f5f5 !important;
 	border:1px solid #ebebeb !important;
@@ -156,7 +164,9 @@ select#meigee_flatshop_theming_paterns_patern option[value="light_wool"] {
 #meigee_flatshop_sidebar_block_tags td.scope-label,
 #meigee_flatshop_sidebar_block_orders td.scope-label,
 #meigee_flatshop_sidebar_block_subscribe td.scope-label,
-#headerslider_coin td.scope-label {
+#headerslider_coin td.scope-label,
+#meigee_flatshop_bgslider_slides td.scope-label,
+#meigee_flatshop_bgslider_slideroptions td.scope-label {
 	background: #f5f5f5 !important;
 	border:1px solid #ebebeb !important;
 	border-left:none !important;

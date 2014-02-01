@@ -68,7 +68,8 @@ header#header .top-cart .block-content .color-box .item.odd,
 #custommenu .color-box .item.odd,
 header#header .top-cart .block-title,
 header#header .form-search button:hover > span,
-button.button > span{background-color:#F44051;}
+button.button > span,
+.header-static h3 {background-color:#F44051;}
 
 
 .cart .totals .checkout-types{
@@ -143,8 +144,10 @@ header#header .top-cart .block-content .color-box .item.even,
 #nav .color-box .item.even,
 #custommenu .color-box .item.even,
 header#header .form-search button > span,
+#custommenu > div.menu.act > div.parentMenu > a,
 #nav > li.active > a,
-button.button:hover > span{background-color:#2FB9B7;}
+button.button:hover > span,
+.header-static h2 {background-color:#2FB9B7;}
 
 
 .onepagecheckout-index-index #onepagecheckout_forgotbox.op_login_area,
@@ -162,31 +165,40 @@ span.label-new .triangle-bottomleft{border-bottom-color: #2FB9B7!important;}
 header#header{background-color:#FFFFFF;}
 
 /* Navigation text color */
-#nav li a{color:#333333;}
+#nav li a,
+header#header .nav-container #custommenu div.menu a span{color:333333!important;}
 
 /* Navigation active text color */
-#nav li.active a,
-#nav li.active a span.num { color:#FFFFFF; }
+#nav > li.active > a,
+#nav > li.active > a span.num,
+header#header .nav-container #custommenu div.menu.act span i.num,
+header#header .nav-container #custommenu div.menu.act > .parentMenu > a > span{ color:#fff!important; }
 
 /* Navigation hover bg */
-#nav > li > a:hover {background-color: #EEEEEE;}
+#nav > li > a:hover,
+header#header .nav-container #custommenu div.menu a:hover{background-color: #EEEEEE;}
 
 /* Navigation active bg */
 #nav > li.active > a,
-button.button:hover > span{background-color:#2FB9B7;}
+#custommenu > div.menu.act > div.parentMenu > a,
+#custommenu button.button:hover > span,
+#nav button.button:hover > span{background-color:#2FB9B7!important;}
 
 /* Navigation button border radius */
 #nav li a:hover,
 #nav li.over a,
-#nav li.active a{
+#nav li.active a,
+header#header .nav-container #custommenu div.menu a:link, 
+header#header .nav-container #custommenu div.menu a:visited{
 	-webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
 
 /* Navigation divider color */
-#nav li.level-top > a > span{
-	border-right-color: #E7E7E7;
+#nav li.level-top > a > span,
+header#header .nav-container #custommenu div.menu a span{
+	border-right-color: #E7E7E7!important;
 }
 
 /* Search form bg */

@@ -44,7 +44,7 @@
                 <sort_order>9999</sort_order>
                 <children>
                     <theme_options translate="title" module="ThemeOptionsFlatshop">
-			<title>Theme Options v1.4</title>
+			<title>Theme Options v1.5</title>
                         <sort_order>1</sort_order>
                 		<children>
 				    <general_options translate="title" module="ThemeOptionsFlatshop">
@@ -73,6 +73,11 @@
 		                        <sort_order>5</sort_order>
 		                        <action>adminhtml/system_config/edit/section/meigee_flatshop_headerslider</action>
 		                    </headerslider_options>
+		                    <bgslider_options translate="title" module="ThemeOptionsFlatshop">
+		                        <title>Background Slider</title>
+		                        <sort_order>6</sort_order>
+		                        <action>adminhtml/system_config/edit/section/meigee_flatshop_bgslider</action>
+		                    </bgslider_options>
                 		</children>
                     </theme_options>
 		    <restore_theme translate="title" module="ThemeOptionsFlatshop">
@@ -184,7 +189,11 @@
 				<fontweight>100</fontweight>
 				<patern>none</patern>
 			</appearance>
+			<header>
+				<floatingheader>0</floatingheader>
+			</header>
 			<layout>
+				<sitelayout>0</sitelayout>
 				<responsiveness>1</responsiveness>
 				<sidebar>sidebar_left</sidebar>
 				<grid>grid_standard</grid>
@@ -370,8 +379,20 @@
 				<autoSlideTransTimer>750</autoSlideTransTimer>
 				<desktopClickDrag>1</desktopClickDrag>
 				<infiniteSlider>0</infiniteSlider>
+				<staticblock>flatshop_instead_of_slider</staticblock>
 		    </coin>
 		</meigee_flatshop_headerslider>
+		<meigee_flatshop_bgslider>
+		    <slides>
+				<slide>default/background.jpg</slide>
+				<slide_2>default/background_2.jpg</slide_2>
+		    </slides>
+		    <slideroptions>
+				<enabled>0</enabled>
+				<fade>750</fade>
+				<duration>4000</duration>
+		    </slideroptions>
+		</meigee_flatshop_bgslider>
 		<ajax>
 			<wishlistcompare>
 				<enabled>1</enabled>

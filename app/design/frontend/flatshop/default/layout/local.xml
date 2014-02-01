@@ -52,8 +52,8 @@
 		<!-- End "Removing items" -->
 
 		<!-- Adding js script for lt IE9 -->
-		<action method="addItem"><type>skin_js</type><name>js/script_ie.js</name><params/><if>lt IE 10</if></action>
-
+		<action method="addItem"><type>skin_js</type><name>js/script_ie.js</name><params/><if>lt IE 10</if></action>  
+		
 		<action method="addItem"><type>skin_js</type><name>js/html5.js</name><params/><if>lt IE 9</if></action>
 		<action method="addItem"><type>skin_js</type><name>js/css3-mediaqueries.js</name><params/><if>lt IE 9</if></action>
 
@@ -71,19 +71,19 @@
 
 		<!-- Grid -->
 		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/switchGrid" /></action>
-
+		
 		<!-- Font Awesome -->
         <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
-
+		
 		<!-- Retina Styles -->
         <action method="addCss" ifconfig="meigee_flatshop_general/appearance/retina"><stylesheet>css/retina.css</stylesheet><params/></action>
-
+		
 		<!-- Skin -->
         <action method="addCss"><stylesheet>css/skin.css</stylesheet><params/></action>
 		<action method="addItem"><type>skin_css</type><name>css/styles-ie-8.css</name><params/><if>IE 8</if></action>
 		<action method="addItem"><type>skin_css</type><name>css/styles-ie-9.css</name><params/><if>IE 9</if></action>
         <action method="addCss"><stylesheet>css/custom.css</stylesheet><params/></action>
-        <block  type="core/template"
+        <block  type="core/template" 
             name="bgslider"
             template="meigee/bgslider.phtml" />
 	</reference>
@@ -114,32 +114,32 @@
 	<reference name="sidebar">
 		<block type="catalog/navigation" name="catalog.categories">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_categories/status">
-                <template>catalog/navigation/left_nav.phtml</template>
+                <template>catalog/navigation/left_nav.phtml</template> 
             </action>
         </block>
         <block type="catalog/product_compare_sidebar" name="catalog.compare.sidebar">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_compare/status">
-                <template>catalog/product/compare/sidebar.phtml</template>
+                <template>catalog/product/compare/sidebar.phtml</template> 
             </action>
         </block>
 		<block type="reports/product_viewed" name="sidebar.reports.product.viewed">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_viewed/status">
-                <template>reports/product_viewed.phtml</template>
+                <template>reports/product_viewed.phtml</template> 
             </action>
         </block>
         <block type="reports/product_compared" name="sidebar.reports.product.compared">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_compared/status">
-                <template>reports/product_compared.phtml</template>
+                <template>reports/product_compared.phtml</template> 
             </action>
         </block>
 		<block type="tag/popular" name="tags_popular">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_tags/status">
-                <template>tag/popular.phtml</template>
+                <template>tag/popular.phtml</template> 
             </action>
         </block>
         <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" after="cart_sidebar">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_wishlist/status">
-                <template>wishlist/sidebar.phtml</template>
+                <template>wishlist/sidebar.phtml</template> 
             </action>
         </block>
         <block type="poll/activePoll" name="sidebar.poll">
@@ -155,7 +155,7 @@
         </block>
 	</reference>
     <!-- ===================================================================================================================== -->
-
+	
 	<reference name="header">
 		<block type="page/html" name="header_slider_container" template="meigee/headerslider.phtml">
 			<block type="cms/block" name="header_slider">
@@ -168,11 +168,11 @@
     </reference>
     <reference name="footer">
     	<!-- Uncomment following code to delete "Advanced Search" and "Orders and Returns" link fro the footer links  -->
-    	<!--
+    	<!-- 
     	<reference name="footer_links">
 			<action method="removeLinkByUrl"><url helper="catalogsearch/getAdvancedSearchUrl"/></action>
 			<remove name="return_link" />
-		</reference>
+		</reference> 
 		-->
         <block type="core/template" name="contactForm">
             <action method="setTemplate" ifconfig="contacts/contacts/enabled"><template>contacts/form_footer.phtml</template></action>
@@ -194,10 +194,10 @@
 			<action method="setBlockId"><block_id>flatshop_social_links</block_id></action>
 		</block>
     </reference>
-	<reference name="wishlist_link">
+	<reference name="wishlist_link"> 
 		<action method="__set">
 			<name>a_params</name><value>class="top-link-wishlist"</value>
-		</action>
+		</action> 
 	</reference>
 </default>
 
@@ -221,7 +221,7 @@
     <reference name="sidebar">
         <block type="catalog/navigation" name="catalog.leftnav" after="catalog.categories">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_shop_by/status">
-                <template>catalog/navigation/left.phtml</template>
+                <template>catalog/navigation/left.phtml</template> 
             </action>
         </block>
         <block type="paypal/logo" name="paypal.partner.sidebar.logo" template="paypal/partner/logo.phtml"/>
@@ -232,13 +232,13 @@
 		<!-- Adding "Fancybox" -->
 		<action method="addCss"><stylesheet helper="ThemeOptionsFlatshop/fancySwitcher" /></action>
 		<action method="addItem"><type>skin_js</type><name helper="ThemeOptionsFlatshop/fancySwitcherJS" /></action>
-
+		
 		<action method="addItem"><type>skin_js</type><name>js/jquery.isotope.min.js</name><params/></action>
 	</reference>
     <reference name="sidebar">
     	<block type="catalog/layer_view" name="catalog.leftnav" before="-">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_shop_by/status">
-                <template>catalog/layer/view.phtml</template>
+                <template>catalog/layer/view.phtml</template> 
             </action>
         </block>
         <block type="paypal/logo" name="paypal.partner.sidebar.logo" template="paypal/partner/logo.phtml"/>
@@ -365,12 +365,12 @@
                 </action>
 				<action method="addTab" translate="title" module="tax">
 					<alias>tags</alias>
-					<title>Product Tags</title>
+					<title>Product Tags</title> 
 					<block>tag/product_list</block>
-					<template>tag/list.phtml</template>
-				</action>
+					<template>tag/list.phtml</template> 
+				</action> 
             </block>
-
+            
             <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
                 <action method="addToParentGroup"><group>detailed_info</group></action>
             </block>
@@ -397,7 +397,7 @@
     <reference name="sidebar">
         <block type="reports/product_viewed" name="sidebar.reports.product.viewed">
             <action method="setTemplate" ifconfig="meigee_flatshop_sidebar/block_viewed/status">
-                <template>reports/product_viewed.phtml</template>
+                <template>reports/product_viewed.phtml</template> 
             </action>
         </block>
     </reference>
@@ -444,6 +444,9 @@
         	<liParams/>
         	<aParams>class="top-link-logout"</aParams>
         </action>
+    </reference>
+    <reference name="sidebar">
+        <block type="sales/reorder_sidebar" name="sale.reorder.sidebar" as="reorder" ifconfig="meigee_flatshop_sidebar/block_orders/status" template="sales/reorder/sidebar.phtml"/>
     </reference>
 </customer_logged_in>
 

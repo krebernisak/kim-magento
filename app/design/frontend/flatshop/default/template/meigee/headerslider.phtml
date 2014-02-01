@@ -3,18 +3,19 @@
 $sliderConfig = MAGE::helper('ThemeOptionsFlatshop')->getThemeOptionsFlatshop('headerslider');
 /*****/
 
-$show = 0;
-if ($sliderConfig ['enabled']):
 
-  /**/
-  if ($sliderConfig['onlyhome']):
-    if (Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'):
-      $show = 1;
-    endif;
-  else:
-    $show = 1;
-  endif; 
-  /**/
+$show = 0;
+/**/
+if ($sliderConfig['onlyhome']):
+if (Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'):
+  $show = 1;
+endif;
+else:
+$show = 1;
+endif; 
+/**/
+
+if ($sliderConfig ['enabled']):
 
 if ($show): 
 
@@ -193,6 +194,9 @@ if($sliderConfig['slidertype'] == 0){
     
   });
 </script>
-    <?php 
+    <?php
   endif;
+endif;
+if (!$sliderConfig ['enabled'] && $show && $sliderConfig ['staticblock']):
+	echo '<div class="header-static"><div class="container_12">' . $this->getLayout()->createBlock('cms/block')->setBlockId($sliderConfig ['staticblock'])->toHtml() . '<div class="clear"></div></div></div>';
 endif;
