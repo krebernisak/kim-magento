@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:13.04
 
 MAINTAINER Kristijan Rebernisak <kristijan.rebernisak@gmail.com>
 
@@ -7,14 +7,14 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install supervis
 
 # Increase PHP memory_limit = 512M
 ADD docker/php.ini /etc/php5/apache2/php.ini
-ADD docker/apache_default.conf /etc/apache2/sites-available/000-default.conf
+ADD docker/apache_default /etc/apache2/sites-available/default
 ADD docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Enable Apache rewrite module
 RUN a2enmod rewrite
 
 # Bundle app source
-RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
+RUN mkdir -p /app && rm -fr /var/www && ln -s /app /var/www
 ADD . /app
 
 RUN cd app/ && chown -R www-data .
