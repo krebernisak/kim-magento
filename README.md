@@ -1,5 +1,5 @@
 # Run a volume container and add media folder from sample data
-docker run -i -t --name kimtoys_data -v /app/var -v /app/media ubuntu:trusty /bin/bash
+docker run -i -t --name kimtoys_data -v /app/var -v /app/media ubuntu:13.04 /bin/bash
 
 # Run a mysql container that is also a a data volume container
 docker run -d -p 3306 --name kimtoys_db tutum/mysql
@@ -18,9 +18,9 @@ mysql -uadmin -p<password> -h<host> -P<port>
 
 USE magento;
 SELECT * FROM core_config_data WHERE path="web/unsecure/base_url";
-UPDATE core_config_data SET value="http://www.newdomain.com/" WHERE path="web/unsecure/base_url";
+UPDATE core_config_data SET value="http://<host>:<port>/" WHERE path="web/unsecure/base_url";
 SELECT * FROM core_config_data WHERE path="web/secure/base_url";
-UPDATE core_config_data SET value="http://www.newdomain.com/" WHERE path="web/secure/base_url"
+UPDATE core_config_data SET value="http://<host>:<port>/" WHERE path="web/secure/base_url"
 exit;
 
 # Build magento container
@@ -37,3 +37,5 @@ UPDATE admin_user SET password=CONCAT(MD5('qXpassword'), ':qX') WHERE username='
 
 # References
 - http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-installing
+- http://www.magentocommerce.com/knowledge-base/entry/install-privs-after
+- http://themeforest.net/item/flatshop-responsive-magento-theme/5872457?ref=MeigeeTeam
